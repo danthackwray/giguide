@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Event artists</h1>
+
+<div id="event_artists">
+  <% @event_artists.each do |event_artist| %>
+    <%= render event_artist %>
+    <p>
+      <%= link_to "Show this event artist", event_artist %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New event artist", new_event_artist_path %>

@@ -1,0 +1,23 @@
+
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.association :venue %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :start_datetime %>
+    <%= f.input :start_time %>
+    <%= f.input :end_datetime %>
+    <%= f.input :end_time %>
+    <%= f.input :cover_image %>
+    <%= f.input :ticket_price %>
+    <%= f.input :capacity %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

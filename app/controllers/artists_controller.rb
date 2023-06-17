@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: %i[ show edit update destroy ]
+  before_action :set_artist, only: %i[show edit update destroy]
 
   # GET /artists or /artists.json
   def index
@@ -8,6 +8,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1 or /artists/1.json
   def show
+    @artist = Artist.find(params[:id])
   end
 
   # GET /artists/new
@@ -17,6 +18,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1/edit
   def edit
+    @artist = Artist.find(params[:id])
   end
 
   # POST /artists or /artists.json
@@ -36,6 +38,7 @@ class ArtistsController < ApplicationController
 
   # PATCH/PUT /artists/1 or /artists/1.json
   def update
+    @artist = Artist.find(params[:id])
     respond_to do |format|
       if @artist.update(artist_params)
         format.html { redirect_to artist_url(@artist), notice: "Artist was successfully updated." }

@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
   # POST /artists or /artists.json
   def create
     @artist = Artist.new(artist_params)
-
+    @artist.user = current_user
     respond_to do |format|
       if @artist.save
         format.html { redirect_to artist_url(@artist), notice: "Artist was successfully created." }
@@ -59,12 +59,12 @@ class ArtistsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_artist
-      @artist = Artist.find(params[:id])
-    end
+  def set_artist
+    @artist = Artist.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def artist_params
-      params.require(:artist).permit(:user_id, :name, :genre, :description, :website)
-    end
+  def artist_params
+    params.require(:artist).permit(:user_id, :name, :genre, :description, :website)
+  end
 end

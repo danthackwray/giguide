@@ -1,9 +1,23 @@
-<h1>New artist</h1>
-
-<%= render "form", artist: @artist %>
-
-<br>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create your new Artist</h3>
+          <%= simple_form_for @artist do |f| %>
+            <%= f.input :name, placeholder: 'The band to watch' %>
+            <%= f.input :genre %>
+            <%= f.input :description, placeholder: 'Tell us about the music' %>
+            <%= f.input :website %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: 'btn-primary' %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div>
   <%= link_to "Back to artists", artists_path %>
 </div>
+
+ <%# <%= render "form", artist: @artist %>

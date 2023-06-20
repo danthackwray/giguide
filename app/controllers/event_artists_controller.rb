@@ -8,6 +8,7 @@ class EventArtistsController < ApplicationController
 
   # GET /event_artists/1 or /event_artists/1.json
   def show
+    @event_artists = Event_artists.find(params[:id])
   end
 
   # GET /event_artists/new
@@ -17,6 +18,7 @@ class EventArtistsController < ApplicationController
 
   # GET /event_artists/1/edit
   def edit
+    @event_artists = Event_artists.find(params[:id])
   end
 
   # POST /event_artists or /event_artists.json
@@ -36,6 +38,7 @@ class EventArtistsController < ApplicationController
 
   # PATCH/PUT /event_artists/1 or /event_artists/1.json
   def update
+    @event_artists = Event_artists.find(params[:id])
     respond_to do |format|
       if @event_artist.update(event_artist_params)
         format.html { redirect_to event_artist_url(@event_artist), notice: "Event artist was successfully updated." }

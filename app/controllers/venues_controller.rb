@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: %i[ show edit update destroy ]
+  before_action :set_venue, only: %i[show edit update destroy]
 
   # GET /venues or /venues.json
   def index
@@ -8,6 +8,7 @@ class VenuesController < ApplicationController
 
   # GET /venues/1 or /venues/1.json
   def show
+    @venue
   end
 
   # GET /venues/new
@@ -17,6 +18,7 @@ class VenuesController < ApplicationController
 
   # GET /venues/1/edit
   def edit
+    @venue = Venue.find(params[:id])
   end
 
   # POST /venues or /venues.json
@@ -36,6 +38,7 @@ class VenuesController < ApplicationController
 
   # PATCH/PUT /venues/1 or /venues/1.json
   def update
+    @venue = Venue.find(params[:id])
     respond_to do |format|
       if @venue.update(venue_params)
         format.html { redirect_to venue_url(@venue), notice: "Venue was successfully updated." }
@@ -59,9 +62,9 @@ class VenuesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_venue
-      @venue = Venue.find(params[:id])
-    end
+     def set_venue
+       @venue = Venue.find(params[:id])
+     end
 
     # Only allow a list of trusted parameters through.
     def venue_params

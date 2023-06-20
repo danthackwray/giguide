@@ -8,7 +8,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1 or /artists/1.json
   def show
-    @artist = Artist.find(params[:id])
+    @artists = Artist.find(params[:id])
   end
 
   # GET /artists/new
@@ -18,7 +18,6 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1/edit
   def edit
-    @artist = Artist.find(params[:id])
   end
 
   # POST /artists or /artists.json

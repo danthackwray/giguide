@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    @events = Event.find(params[:id])
   end
 
   # GET /events/new
@@ -17,6 +18,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @events = Event.find(params[:id])
   end
 
   # POST /events or /events.json
@@ -36,6 +38,7 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
+    @events = Event.find(params[:id])
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }

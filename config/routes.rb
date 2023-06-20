@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  resources :event_artists, only: %i[index show new create edit update destroy]
-  resources :reviews
-  resources :events, only: %i[index show new create edit update destroy]
-  resources :venues, only: %i[index show new create edit update destroy]
-  resources :artists
   devise_for :users
   root to: "pages#home"
-  # get '/venue', to: 'venues#index'
 
+  resources :artists, only: %i[show index new create edit update destroy]
+  resources :reviews, only: %i[index show new create edit update destroy]
+  resources :event_artists, only: %i[index show new create edit update destroy]
+  resources :events, only: %i[index show new create edit update destroy]
+  resources :venues, only: %i[index show new create edit update destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

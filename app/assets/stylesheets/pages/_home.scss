@@ -1,1 +1,61 @@
 // Specific CSS for your home-page
+
+.body {
+  background-color: #181E3F;
+
+}
+
+
+.banner{
+  display: block;
+
+  width: 100%;
+}
+
+.container {
+background-color: #181E3F;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.searchbar {
+ height: 100px;
+  background-color: #181E3F;
+  grid-area: searchbar ;
+}
+
+
+.top_events {
+ height: 50px;
+  background-color: #000;
+  grid-area: top_events;
+
+
+}
+
+.main {
+
+}
+
+.footer {
+background-color: black;
+grid-area: footer;
+height: 150px;
+}
+
+.cards {
+
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.card {
+  box-shadow:0 0 3px #fff;
+  border-radius: 5px;
+}
+
+.image__event {
+  width: 100%;
+  display: block;
+
+}

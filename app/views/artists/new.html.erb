@@ -4,10 +4,17 @@
       <div class="bg-white rounded p-3 shadow">
         <h3>Create your new Artist</h3>
           <%= simple_form_for @artist do |f| %>
-            <%= f.input :name, placeholder: 'The band to watch' %>
+            <%= f.input :name, placeholder: 'Nirvana' %>
             <%= f.input :genre %>
             <%= f.input :description, placeholder: 'Tell us about the music' %>
             <%= f.input :website %>
+            <%= f.input :genre,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Artist::CATEGORIES %>
             <%= f.input :photo, as: :file %>
             <%= f.submit class: 'btn-primary' %>
           <% end %>

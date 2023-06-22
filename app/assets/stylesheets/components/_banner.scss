@@ -1,0 +1,24 @@
+.banner{
+  display: block;
+
+  width: 100%;
+}
+
+.banner_text h1 {
+  font-family: sans-serif;
+  letter-spacing: 4px;
+  margin: 0;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner_text p {
+  font-size: 20px;
+  color: black;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+}

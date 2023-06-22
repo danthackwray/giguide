@@ -1,0 +1,16 @@
+<%= link_to event_path(event) do %>
+  <div class="card-trip remove-text-decoration">
+    <% if event.photo.attached? %>
+      <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <p>no image</p>
+    <% end %>
+  <div class="card-trip-infos">
+      <div class="item-name">
+        <h2><%= event.name %></h2>
+      </div>
+        <h2 class="card-trip-pricing">£<%= event.price %></h2>
+         <img alt="Le Wagon" width="200" src="/assets/image18-f930e120842b7123e7419a775e67835e8f167da085aa168b638949c19ee9b9e7.jpg" class="card-trip-user avatar-bordered" />
+      </div>
+  </div>
+<% end %>

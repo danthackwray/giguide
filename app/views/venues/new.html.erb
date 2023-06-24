@@ -1,9 +1,21 @@
-<h1>New venue</h1>
-
-<%= render "form", venue: @venue %>
-
-<br>
-
-<div>
-  <%= link_to "Back to venues", venues_path %>
+<div class="py-5 container-venue-show">
+  <div>
+    <%= link_to venues_path, class: "back-arrow" do %>
+    <i class="fa-sharp fa-regular fa-arrow-left-long"></i> all venues
+    <% end %>
+  </div>
+    <div class="row">
+     <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-translucent rounded p-3 shadow">
+        <h3>Upload your venue details</h3>
+          <%= simple_form_for @venue do |f| %>
+            <%= f.input :name, placeholder: 'JamRock Theatre' %>
+            <%= f.input :website %>
+            <%= f.input :email %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit class: 'main-button' %>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>

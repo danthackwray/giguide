@@ -1,11 +1,15 @@
 <div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Create your new Artist</h3>
+  <div>
+    <%= link_to artists_path, class: "back-arrow" do %>
+    <i class="fa-sharp fa-regular fa-arrow-left-long"></i> all artists
+    <% end %>
+  </div>
+    <div class="row">
+     <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-translucent rounded p-3 shadow">
+        <h3>Create your Artist profile</h3>
           <%= simple_form_for @artist do |f| %>
             <%= f.input :name, placeholder: 'Nirvana' %>
-            <%= f.input :genre %>
             <%= f.input :description, placeholder: 'Tell us about the music' %>
             <%= f.input :website %>
             <%= f.input :genre,
@@ -15,16 +19,13 @@
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: Artist::CATEGORIES %>
-            <%= f.input :photo, as: :file %>
-            <%= f.submit class: 'btn-primary' %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit class: 'main-button' %>
           <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<div>
-  <%= link_to "Back to artists", artists_path %>
-</div>
 
  <%# <%= render "form", artist: @artist %>

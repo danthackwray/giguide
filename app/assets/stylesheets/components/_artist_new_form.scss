@@ -18,9 +18,9 @@
   cursor: pointer;
   box-sizing: border-box;
   width: 100%;
-  font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
@@ -28,36 +28,36 @@
 }
 
 .category-selector:checked + label {
-  background-color: yellow;
-  color: black
-}
-
-
-#artist_genre_javascript + label {
-  color: #FFC65A;
-}
-
-#artist_genre_ruby:checked + label {
-  background-color: #FD1015;
-  border-color: #FD1015;
-}
-
-
-#artist_genre_metal + label {
-  color: #FFC65A;
-}
-
-#artist_genre_javascript:checked + label {
   background-color: #FFC65A;
   border-color: #FFC65A;
 }
 
 
-#artist_genre_css + label {
-  color: #62DDF5;
+#artist_genre_blues + label {
+  color: black;
 }
 
-#artist_genre_css:checked + label {
-  background-color: #62DDF5;
-  border-color: #62DDF5;
+#artist_genre_blues:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+}
+
+
+#artist_genre_indie + label {
+  color: black;
+}
+
+#artist_genre_indie:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+}
+
+
+#artist_genre_jazz + label {
+  color: black;
+}
+
+#artist_genre_jazz:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
 }

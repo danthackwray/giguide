@@ -1,275 +1,37 @@
 
-<div class="container_home_page">
-
-<div class="navbar">
+<div class="banner">
+    <img alt="Le Wagon" src="/assets/wide2-d80eef8eca3fbd5d5e1fe3a2207c795370072a2c5f959dcf9e6bcdc6064feddc.JPG" class="banner">
+  <div class="banner-text">
+    <h2>Gig Guide Capetown</h2>
+    <p>Explore the amazing nightlife we offer</p>
+</div>
 </div>
 
-<div class="banner" class="banner_img">
 
-    <%= image_tag "best.jpg", alt: "Le Wagon", width: 200 %>
-
-</div>
 
 <div class="searchbar">
 
-</div>
-
-
-<div class="upcoming" >
-  <p class="upcoming_events">Upcomming Events</p>
-</div>
-
-
-
-<div class="content1">
-  <div class="cards">
-    <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/image18-f930e120842b7123e7419a775e67835e8f167da085aa168b638949c19ee9b9e7.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <button class="btn1" ><a href="" class="card__link" ><h6>View Event</h6></a></button>
-          </div>
+  <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find an event" %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
       </div>
   </div>
 
- </div>
-
-   <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event13-1e47714b48ac23060f29fe40be4ac0cb8002bdb47735e0aef92dcbe3e2cf66b6.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-         </div>
-     </div>
-
-    </div>
-
-    <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event9-dd7865ba35cddcdf4098de8074b37dbdcd972a903eee69efd2567746fc6bda31.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-          <div class= "info">
-          <h6>Event Date:
-              Venue:</h6>
-
-          </div>
-          <div>
-
-           <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-
-         </div>
-     </div>
-
-    </div>
-</div>
-
-
-
-<div class="content2">
-  <div class="cards">
-    <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/image18-f930e120842b7123e7419a775e67835e8f167da085aa168b638949c19ee9b9e7.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <a href="" class="card__link" class="btn btn-primary">View Event</a>
-          </div>
-      </div>
-  </div>
-
- </div>
-
-   <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event13-1e47714b48ac23060f29fe40be4ac0cb8002bdb47735e0aef92dcbe3e2cf66b6.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-         </div>
-     </div>
-
-    </div>
-
-    <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event9-dd7865ba35cddcdf4098de8074b37dbdcd972a903eee69efd2567746fc6bda31.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-          <div class= "info">
-          <h6>Event Date:
-              Venue:</h6>
-
-          </div>
-          <div>
-
-           <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-
-         </div>
-     </div>
-
-    </div>
+<nav class="search_navbar">
+  <a href="#" class="nav-link">Genre</a>
+  <a href="#" class="nav-link">Event</a>
+  <a href="#" class="nav-link">Venues</a>
+  <a href="#" class="nav-link">Artist</a>
+</nav>
 
 </div>
 
-
-
-
-
-<div class="content3">
-  <div class="cards">
-    <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/image18-f930e120842b7123e7419a775e67835e8f167da085aa168b638949c19ee9b9e7.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <a href="" class="card__link" class="btn btn-primary">View Event</a>
-          </div>
-      </div>
-  </div>
-
- </div>
-
-   <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event13-1e47714b48ac23060f29fe40be4ac0cb8002bdb47735e0aef92dcbe3e2cf66b6.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-         </div>
-     </div>
-
-    </div>
-
-    <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event9-dd7865ba35cddcdf4098de8074b37dbdcd972a903eee69efd2567746fc6bda31.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-          <div class= "info">
-          <h6>Event Date:
-              Venue:</h6>
-
-          </div>
-          <div>
-
-           <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-
-         </div>
-     </div>
-
-    </div>
-</div>
-
-<div class="content4">
-  <div class="cards">
-    <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/image18-f930e120842b7123e7419a775e67835e8f167da085aa168b638949c19ee9b9e7.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <a href="" class="card__link" class="btn btn-primary">View Event</a>
-          </div>
-      </div>
-  </div>
-
- </div>
-
-   <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event13-1e47714b48ac23060f29fe40be4ac0cb8002bdb47735e0aef92dcbe3e2cf66b6.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-         <div class= "info">
-            <h6>Event Date:
-              Venue:</h6>
-          </div>
-          <div>
-             <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-         </div>
-     </div>
-
-    </div>
-
-    <div class="cards">
-     <div class="card">
-       <img alt="Le Wagon" width="200" src="/assets/event9-dd7865ba35cddcdf4098de8074b37dbdcd972a903eee69efd2567746fc6bda31.jpg" class="card__image1">
-         <div class="card__content">
-         <p>
-         </p>
-          <div class= "info">
-          <h6>Event Date:
-              Venue:</h6>
-
-          </div>
-          <div>
-
-           <a href="" class="card__link" class="btn">View Event</a>
-          </div>
-
-         </div>
-     </div>
-
-    </div>
-</div>
-
-
-
-<div class ="footer"><Footer>Footer</Footer>
-
-
-</div>
-
-
+<div class="events_banner">
+  <h2>Top   Events</h2>
 </div>

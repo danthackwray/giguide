@@ -1,0 +1,22 @@
+.search_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181e3f;
+  height: 50px;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: black;
+}

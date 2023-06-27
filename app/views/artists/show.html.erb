@@ -1,10 +1,52 @@
-<p style="color: green"><%= notice %></p>
+<div class="container-artist-show">
+  <div class="navbar">
+    <h1>Navbar</h1>
+  </div>
 
-<%= render @artist %>
+  <div class="name-banner-artist-show">
+    <%= @artist.name %>
+  </div>
 
-<div>
-  <%= link_to "Edit this artist", edit_artist_path(@artist) %> |
-  <%= link_to "Back to artists", artists_path %>
+  <div class="artist-info">
 
-  <%= button_to "Destroy this artist", @artist, method: :delete %>
+    <div class="artist-info-img">
+    </div>
+
+    <h3>Artist Info</h3>
+    <div id="<%= dom_id @artist %>">
+      <p>
+        <strong>User:</strong>
+        <%= @artist.user_id %>
+      </p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @artist.name %>
+      </p>
+
+      <p>
+        <strong>Genre:</strong>
+        <%= @artist.genre %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @artist.description %>
+      </p>
+
+      <p>
+        <strong>Website:</strong>
+        <%= @artist.website %>
+      </p>
+    </div>
+    <div class="btns-artist-show">
+      <%= link_to "Edit this artist", edit_artist_path(@artist), class:"btn-edit" %>
+      <%= link_to "Back to artists", artists_path, class:"btn-back" %>
+      <%= button_to "Destroy this artist", @artist, method: :delete, class:"btn-delete" %>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Footer</p>
 </div>

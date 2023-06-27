@@ -8,7 +8,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1 or /artists/1.json
   def show
-    @artists = Artist.find(params[:id])
+    @artist = Artist.find(params[:id])
   end
 
   # GET /artists/new
@@ -67,6 +67,6 @@ class ArtistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
   def artist_params
-    params.require(:artist).permit(:user_id, :name, :genre, :description, :website)
+    params.require(:artist).permit(:user_id, :name, :genre, :description, :website, :photo)
   end
 end

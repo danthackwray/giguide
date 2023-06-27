@@ -1,7 +1,7 @@
 <div class="py-5 container-venue-show">
   <div>
     <%= link_to venues_path, class: "back-arrow" do %>
-    <i class="fa-sharp fa-regular fa-arrow-left-long"></i> all venues
+    <i class="fa-solid fa-circle-arrow-left"></i> 
     <% end %>
   </div>
     <div class="row">
@@ -13,7 +13,7 @@
             <%= f.input :website %>
             <%= f.input :email %>
           <%= f.input :photo, as: :file %>
-          <%= f.submit class: 'main-button' %>
+          <%= f.submit class: 'venue-button' %>
           <% end %>
       </div>
     </div>

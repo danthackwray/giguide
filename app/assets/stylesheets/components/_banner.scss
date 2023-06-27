@@ -1,5 +1,12 @@
 .banner {
-  position: relative;
+  display: flex;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  background-image: url("BANNER3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .banner img {
@@ -8,21 +15,20 @@
 }
 
 .banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  color: rgb(4, 4, 4);
+  color: rgb(0, 0, 0);
+  font-family: $martel;
 }
 
 .banner-text h2 {
-  font-size: 50px;
+  font-size: 80px;
   font-weight: bold;
   margin-bottom: 10px;
+  font-family: $martel;
 }
 
 .banner-text p {
-  font-size: 18px;
+  font-size: 40px;
   margin-bottom: 0;
+  font-family: $martel;
 }

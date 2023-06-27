@@ -1,18 +1,13 @@
 
 <div class="banner">
-    <img alt="Le Wagon" src="/assets/wide2-d80eef8eca3fbd5d5e1fe3a2207c795370072a2c5f959dcf9e6bcdc6064feddc.JPG" class="banner">
   <div class="banner-text">
-    <h2>Gig Guide Capetown</h2>
-    <p>Explore the amazing nightlife we offer</p>
+    <h2>GIG GUIDE</h2>
+  </div>
 </div>
-</div>
-
-
 
 <div class="searchbar">
-
   <div class="row justify-content-center">
-      <div class="col-sm-8 my-3">
+      <div class="col-sm-8">
         <%= form_with url: events_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
             params[:query],
@@ -34,4 +29,13 @@
 
 <div class="events_banner">
   <h2>Top   Events</h2>
+</div>
+
+<div class="event-cards-container">
+  <% @events.each do |event|%>
+    <div class="event-card">
+      <%= image_tag("CAPE.jpg") %>
+      <%= event.title %>
+    </div>
+  <% end %>
 </div>

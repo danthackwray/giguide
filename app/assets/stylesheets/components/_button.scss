@@ -46,6 +46,33 @@
   border: 1px solid #c4570f;
   text-decoration: none;
 }
+
+.venue-button{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#1647fb, #0fc4c4);
+  transition: background 0.3s ease;
+  border: 1px solid #0f2ec4;
+  text-decoration: none;
+}
+
+.venue-button:hover {
+  background: linear-gradient(#07b2f5, #4838dd);
+  color: white;
+}
+
+.fa-solid{
+  width: 70px;
+  margin-left: 50px;
+  height: 70px;
+  font-size: 2em;
+}
+
+.fa-solid.fa-circle-left:hover {
+  color: rgb(226, 226, 233);
+}
 // .home_button {
 //   text-align: center;
 //   margin-top: 200px;

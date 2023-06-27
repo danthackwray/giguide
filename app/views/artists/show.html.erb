@@ -10,7 +10,6 @@
   <div class="artist-info">
 
     <div class="artist-info-img">
-      <img src="https://github.com/danthackwray/giguide/blob/master/RANDOM%20BAND%20PHOTO.jpg?raw=true" alt="Artist Photo">
     </div>
 
     <h3>Artist Info</h3>
@@ -40,10 +39,10 @@
         <%= @artist.website %>
       </p>
     </div>
-    <div>
-      <%= link_to "Edit this artist", edit_artist_path(@artist) %> |
-      <%= link_to "Back to artists", artists_path %>
-      <%= button_to "Destroy this artist", @artist, method: :delete %>
+    <div class="btns-artist-show">
+      <%= link_to "Edit this artist", edit_artist_path(@artist), class:"btn-edit" %>
+      <%= link_to "Back to artists", artists_path, class:"btn-back" %>
+      <%= button_to "Destroy this artist", @artist, method: :delete, class:"btn-delete" %>
     </div>
   </div>
 </div>

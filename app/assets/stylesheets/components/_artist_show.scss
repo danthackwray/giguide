@@ -18,7 +18,7 @@
   text-align: center;
 }
 
-.name-banner {
+.name-banner-artist-show {
   background-color: rgb(30, 30, 30);
   color: white;
   padding: 20px 10px;
@@ -30,6 +30,7 @@
 
 .artist-info {
   background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
   color: white;
   padding: 40px;
   margin: 30px;
@@ -41,11 +42,6 @@
   height: 200px;
   margin-bottom: 10px;
   margin: 0 auto;
-}
-
-.wrapper {
-  min-height: 100%;
-  position: relative;
 }
 
 .footer {

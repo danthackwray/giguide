@@ -1,0 +1,45 @@
+.container-event-show {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://github.com/danthackwray/giguide/blob/master/VENUE%204.jpg?raw=true');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.name-banner-event-show {
+  background-color: rgb(235, 230, 230);
+  color: white;
+  padding: 10px 5px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: $martel;
+  font-size: 40px;
+}
+
+.event-info {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  color: white;
+  padding: 40px;
+  margin: 30px;
+}
+
+.event-info-img {
+  background-image: url(https://github.com/danthackwray/giguide/blob/master/RANDOM%20BAND%20PHOTO.jpg?raw=true);
+  background-size: cover;
+  background-position: center;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  margin: 0 auto;
+}
+
+.btns-event-show {
+  display: flex;
+  justify-content: space-between;
+}
+

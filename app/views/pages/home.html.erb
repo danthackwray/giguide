@@ -31,9 +31,13 @@
 
 <div class="event-cards-container">
   <% @events.each do |event|%>
-    <div class="event-card">
-      <%= image_tag("CAPE.jpg") %>
-      <%= event.title %>
-    </div>
+    <%= link_to event_path(event) do %>
+      <div class="event-card">
+        <%= image_tag("CAPE.jpg") %>
+        <%= event.title %>
+        <%= event.start_datetime.strftime("%A, %b %d")%>
+        <%= event.ticket_price %>
+      </div>
+    <% end %>
   <% end %>
 </div>

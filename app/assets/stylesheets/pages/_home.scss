@@ -1,18 +1,19 @@
 // Specific CSS for your home-page
 
-.body {
-  background-color: #181E3F;
+body {
+  background-color: #000000;
+  color: rgb(220, 105, 255);
 
 }
 
 .container_home {
-background-color: #181E3F;
+  background-color: #181E3F;
   display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 
 .searchbar {
- height: 160px;
+  height: 160px;
   background-color: #181E3F;
   grid-area: searchbar ;
   width: 100%;
@@ -20,7 +21,7 @@ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .top_events {
- height: 50px;
+  height: 40px;
   background-color: #000;
   grid-area: top_events;
 

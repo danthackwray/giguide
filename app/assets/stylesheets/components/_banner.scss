@@ -6,7 +6,9 @@
   background-image: url("BANNER3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
+  color: white;
+  -webkit-text-stroke: 1px white;
 }
 
 .banner img {
@@ -22,7 +24,7 @@
 
 .banner-text h2 {
   font-size: 80px;
-  font-weight: bold;
+  font-weight: 1100;
   margin-bottom: 10px;
   font-family: $martel;
 }

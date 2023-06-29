@@ -1,11 +1,17 @@
 
 <div class="banner">
   <div class="banner-text">
-    <h2>GIG GUIDE</h2>
+    <h2>G I G U I D E</h2>
   </div>
 </div>
 
 <div class="searchbar">
+  <nav class="search_navbar">
+    <a href="#" class="nav-link">Genre</a>
+    <a href="#" class="nav-link">Event</a>
+    <a href="#" class="nav-link">Venues</a>
+    <a href="#" class="nav-link">Artist</a>
+  </nav>
   <div class="row justify-content-center">
       <div class="col-sm-8">
         <%= form_with url: events_path, method: :get, class: "d-flex" do %>
@@ -17,18 +23,10 @@
         <% end %>
       </div>
   </div>
-
-<nav class="search_navbar">
-  <a href="#" class="nav-link">Genre</a>
-  <a href="#" class="nav-link">Event</a>
-  <a href="#" class="nav-link">Venues</a>
-  <a href="#" class="nav-link">Artist</a>
-</nav>
-
 </div>
 
 <div class="events_banner">
-  <h2>Top   Events</h2>
+  <h2>UPCOMING EVENTS</h2>
 </div>
 
 <div class="event-cards-container">

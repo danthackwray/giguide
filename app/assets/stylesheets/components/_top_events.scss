@@ -1,14 +1,19 @@
 .events_banner {
-  background-color: black;
+  background-color: rgb(40, 13, 48);
   color: white;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: 10px;
+  margin-bottom: 0px;
 }
 
 .events_banner h2 {
   font-size: 28px;
   font-weight: bold;
-
+  font-family: $martel;
+  margin: 0px;
+  line-height: 1;
+  margin-top: 5px;
 }

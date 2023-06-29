@@ -1,9 +1,35 @@
-<h1>New event</h1>
+<div class="py-5 container-venue-show">
+  <div>
+    <%= link_to events_path, class: "back-arrow" do %>
+    <i class="fa-solid fa-circle-arrow-left"></i>
+    <% end %>
+  </div>
+    <div class="row">
+     <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-translucent rounded p-3 shadow">
+        <h3>Upload your event details</h3>
+          <%= simple_form_for @event do |f| %>
+                <%= f.association :venue %>
+                <%= f.input :title %>
+                <%= f.input :description %>
+                <%= f.input :start_datetime %>
+                <%= f.input :start_time %>
+                <%= f.input :end_datetime %>
+                <%= f.input :end_time %>
+                <%= f.input :cover_image %>
+                <%= f.input :ticket_price %>
+                <%= f.input :capacity %>
+                <%= link_to 'Add Artist', artists_path %>
+                <%= link_to 'Add Venue', venues_path %>
+          <%= f.submit class: 'event-button' %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render "form", event: @event %>
-
-<br>
 
 <div>
+
   <%= link_to "Back to events", events_path %>
 </div>

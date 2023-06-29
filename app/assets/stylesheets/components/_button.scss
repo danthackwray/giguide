@@ -71,8 +71,26 @@
 }
 
 .fa-solid.fa-circle-left:hover {
-  color: rgb(226, 226, 233);
+  color: rgb(227, 227, 243);
 }
+
+.event-button{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#300631, #3d3494);
+  transition: background 0.3s ease;
+  border: 1px solid #4f0680;
+  text-decoration: none;
+}
+
+.event-button:hover {
+  background: linear-gradient(#890cc4, #ec54e0);
+  color: white;
+}
+
+
 // .home_button {
 //   text-align: center;
 //   margin-top: 200px;

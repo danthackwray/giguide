@@ -24,15 +24,12 @@ class EventArtistsController < ApplicationController
   # POST /event_artists or /event_artists.json
   def create
     @event_artist = EventArtist.new(event_artist_params)
-
-    respond_to do |format|
-      if @event_artist.save
-        format.html { redirect_to event_artist_url(@event_artist), notice: "Event artist was successfully created." }
-        format.json { render :show, status: :created, location: @event_artist }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @event_artist.errors, status: :unprocessable_entity }
-      end
+    if @event_artist.save
+      flash[:notice] = "Artist added successfully!"
+      redirect_to new_event_path  # or edit_event_path(@event_artist.event_id) if you're editing
+    else
+      flash[:alert] = "Failed to add the artist!"
+      redirect_to new_event_path # render new artist form if the creation was unsuccessful
     end
   end
 

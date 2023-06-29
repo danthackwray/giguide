@@ -58,13 +58,13 @@ puts "Creating users..."
 
 file = URI.open("https://singersroom.com/wp-content/uploads/2023/02/Best-Female-Rock-Songs-scaled.jpg")
 user1 = User.new(
-  email: "arteest@gmail.com",
-  password: "Password",
+  email: "a@gmail.com",
+  password: "123456",
   username: "MusicCreator",
   role: "Artist"
 )
 # user1.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
-# user1.save
+user1.save
 
 artist1 = Artist.new(
   user: user1,

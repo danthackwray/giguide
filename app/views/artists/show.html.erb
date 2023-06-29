@@ -38,7 +38,7 @@
     <div class="btns-artist-show">
       <%= link_to "Edit this artist", edit_artist_path(@artist), class:"btn-edit" %>
       <%= link_to "Back to artists", artists_path, class:"btn-back" %>
-      <%= link_to 'Add to Event', event_artists_path(event_id: session[:event_id], artist_id: artist.id), method: :post %>
+      <%= link_to 'Add to Event', event_artists_path(event_id: session[:event_id], artist_id: @artist.id), method: :post %>
       <%= button_to "Destroy this artist", @artist, method: :delete, class:"btn-delete" %>
     </div>
   </div>

@@ -1,13 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<div class="events-index-banner">
+  <h1>Events</h1>
+</div>
 
-<h1>Events</h1>
 
 <div id="events">
   <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
+
+    <div class="events-index-card">
+      <%= event.title %>
+      <%= link_to "Show this event", event, class:"main-button" %>
+    </div>
+
   <% end %>
 </div>
 

@@ -1,12 +1,8 @@
 <div id="<%= dom_id event %>">
-  <p>
-    <strong>User:</strong>
-    <%= event.user_id %>
-  </p>
 
   <p>
     <strong>Venue:</strong>
-    <%= event.venue_id %>
+    <%= event.venue.name %>
   </p>
 
   <p>
@@ -52,6 +48,13 @@
   <p>
     <strong>Capacity:</strong>
     <%= event.capacity %>
+  </p>
+
+   <p>
+  <strong>Artists:</strong>
+  <% @event.artists.each do |artist| %>
+    <%= artist.name %>
+  <% end %>
   </p>
 
 </div>

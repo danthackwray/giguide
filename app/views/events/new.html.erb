@@ -12,13 +12,18 @@
                 <%= f.association :venue %>
                 <%= f.input :title %>
                 <%= f.input :description %>
-                <%= f.input :start_datetime %>
-                <%= f.input :start_time %>
-                <%= f.input :end_datetime %>
-                <%= f.input :end_time %>
-                <%= f.input :cover_image %>
+                <%= f.input :start_datetime, as: :string, input_html: { class: 'flatpickr-input' } %>
+                <%= f.input :start_time, as: :string, input_html: { class: 'flatpickr-input' } %>
+                <%= f.input :end_datetime, as: :string, input_html: { class: 'flatpickr-input' } %>
+                <%= f.input :end_time, as: :string, input_html: { class: 'flatpickr-input' } %>
+                <%# <%= f.simple_fields_for :event_artists do |event_artist| %>
+                  <%# <%= event_artist.association :artist %>
+                    <%# <% end %>
+                <%= f.input :cover_image, as: :file %>
                 <%= f.input :ticket_price %>
                 <%= f.input :capacity %>
+                <%= f.association :artists, as: :check_boxes, label_method: :name, value_method: :id %>
+                <%= f.association :artists, input_html: { multiple: true } %>
                 <%= link_to 'Add Artist', artists_path, class: "event-button" %>
                 <%= link_to 'Add Venue', venues_path, class: "event-button" %>
           <%= f.submit class: 'event-button' %>

@@ -13,7 +13,8 @@ class EventArtistsController < ApplicationController
 
   # GET /event_artists/new
   def new
-    @event_artist = EventArtist.new
+    @event = Event.new
+    @event.event_artists << EventArtist.new
   end
 
   # GET /event_artists/1/edit
@@ -23,15 +24,26 @@ class EventArtistsController < ApplicationController
 
   # POST /event_artists or /event_artists.json
   def create
-    @event_artist = EventArtist.new(event_artist_params)
+    @event = Event.find(params[:event_id])
+    @event_artist = EventArtist.new
+    @event_artist.event = @event
+    @event_artist.artist = Artist.find(params[:artist_id])
     if @event_artist.save
-      flash[:notice] = "Artist added successfully!"
-      redirect_to new_event_path  # or edit_event_path(@event_artist.event_id) if you're editing
+      redirect_to event_path(@event), notice: "Artist was successfully added to this event."
     else
-      flash[:alert] = "Failed to add the artist!"
-      redirect_to new_event_path # render new artist form if the creation was unsuccessful
+      redirect_to event_path(@event), notice: "Could not add artist to event."
     end
   end
+  # def create
+  #   @event_artist = EventArtist.new(event_artist_params)
+  #   if @event_artist.save
+  #     flash[:notice] = "Artist added successfully!"
+  #     redirect_to new_event_path  # or edit_event_path(@event_artist.event_id) if you're editing
+  #   else
+  #     flash[:alert] = "Failed to add the artist!"
+  #     redirect_to new_event_path # render new artist form if the creation was unsuccessful
+  #   end
+  # end
 
   # PATCH/PUT /event_artists/1 or /event_artists/1.json
   def update

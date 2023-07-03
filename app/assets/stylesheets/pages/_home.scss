@@ -13,11 +13,12 @@ body {
 }
 
 .searchbar {
-  height: 160px;
+  height: 70px;
   background-color: #181E3F;
-  grid-area: searchbar ;
   width: 100%;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .top_events {

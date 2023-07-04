@@ -1,21 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag("logo.png", alt: "Logo") %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag("logo.png", alt: "Logo") %>
     <% end %>
-    <nav class="navbar-menu">
-    <div class="dropdown">
-      <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Navigation
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to 'Events', events_path, class: 'dropdown-item' %>
-        <%= link_to 'Venues', venues_path, class: 'dropdown-item' %>
-        <%= link_to 'Artists', artists_path, class: 'dropdown-item' %>
-        <%= link_to 'Home', root_path, class: 'dropdown-item' %>
-      </div>
-    </div>
-    </nav>
+
+<nav class="navbar-menu">
+  <ul class="navbar-links">
+    <li><%= link_to 'CREATE EVENT', events_path, class: 'navbar-link' %></li>
+    <li><%= link_to 'CREATE VENUE', venues_path, class: 'navbar-link' %></li>
+    <li><%= link_to 'CREATE ARTIST', artists_path, class: 'navbar-link' %></li>
+
+  </ul>
+</nav>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

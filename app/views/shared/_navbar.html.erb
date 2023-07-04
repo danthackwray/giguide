@@ -3,6 +3,19 @@
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag("logo.png", alt: "Logo") %>
     <% end %>
+    <nav class="navbar-menu">
+    <div class="dropdown">
+      <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Navigation
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to 'Events', root_path, class: 'dropdown-item' %>
+        <%= link_to 'Venues', root_path, class: 'dropdown-item' %>
+        <%= link_to 'Artists', root_path, class: 'dropdown-item' %>
+        <%= link_to 'Create an event', root_path, class: 'dropdown-item' %>
+      </div>
+    </div>
+    </nav>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -35,4 +48,5 @@
       </ul>
     </div>
   </div>
+
 </div>

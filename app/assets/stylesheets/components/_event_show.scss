@@ -2,7 +2,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  background-image: url('https://github.com/danthackwray/giguide/blob/master/VENUE%204.jpg?raw=true');
+  background-image: url('LIVE CONCERT RED');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -11,7 +11,7 @@
 }
 
 .name-banner-event-show {
-  background-color: rgb(235, 230, 230);
+  background-color: rgb(30, 30, 30);
   color: white;
   padding: 10px 5px;
   text-align: center;
@@ -29,8 +29,6 @@
 }
 
 .event-info-img {
-  background-image: url(https://github.com/danthackwray/giguide/blob/master/RANDOM%20BAND%20PHOTO.jpg?raw=true);
-  background-size: cover;
   background-position: center;
   width: 200px;
   height: 200px;
@@ -42,4 +40,3 @@
   display: flex;
   justify-content: space-between;
 }
-

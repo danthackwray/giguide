@@ -3,7 +3,11 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    if params[:query].present?
+      @events = Event.search_by_title_and_description(params[:query])
+    else
+      @events = Event.all
+    end
   end
 
   # GET /events/1 or /events/1.json

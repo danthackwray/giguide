@@ -23,9 +23,6 @@
                 <%= f.input :ticket_price %>
                 <%= f.input :capacity %>
                 <%= f.association :artists, as: :check_boxes, label_method: :name, value_method: :id %>
-                <%= f.association :artists, input_html: { multiple: true } %>
-                <%= link_to 'Add Artist', artists_path, class: "event-button" %>
-                <%= link_to 'Add Venue', venues_path, class: "event-button" %>
           <%= f.submit class: 'event-button' %>
           <% end %>
       </div>

@@ -1,6 +1,8 @@
 require 'faker'
 require "open-uri"
 
+puts "Clearing the database..."
+
 EventArtist.destroy_all
 Review.destroy_all
 Event.destroy_all
@@ -56,15 +58,15 @@ puts "Creating amazing seeds..."
 
 puts "Creating users..."
 
-file = URI.open("https://singersroom.com/wp-content/uploads/2023/02/Best-Female-Rock-Songs-scaled.jpg")
+user1_file = URI.open("https://singersroom.com/wp-content/uploads/2023/02/Best-Female-Rock-Songs-scaled.jpg")
 user1 = User.create!(
   email: "a@gmail.com",
   password: "123456",
   username: "MusicCreator",
   role: "Artist"
 )
-# user1.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
-user1.save
+# user1.photo.attach(io: user1_file, filename: "nes.png", content_type: "image/png")
+# user1.save
 
 artist1 = Artist.create!(
   user: user1,
@@ -74,28 +76,20 @@ artist1 = Artist.create!(
   from legendary blues vocalists, Soulful Sista weaves her own unique style into each performance, delivering
   soul-stirring renditions of blues classics and original compositions. Her powerful stage presence and emotive delivery
   create an intimate connection with her audience, leaving them mesmerized and yearning for more",
-  website: "www.SoulfulSista.com",
+  website: "www.soulfulsista.com",
   genre: "Blues"
 )
 
-file = URI.open("https://images.unsplash.com/photo-1618673747378-7e0d3561371a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG11c2ljaWFufGVufDB8fDB8fHww&w=1000&q=80")
+user2_file = URI.open("https://images.unsplash.com/photo-1618673747378-7e0d3561371a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG11c2ljaWFufGVufDB8fDB8fHww&w=1000&q=80")
 user2 = User.create!(
   email: "artist2@gmail.com",
   password: "Password",
   username: "SongwriterExtraordinaire",
   role: "Artist"
-  )
-# user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
+)
+# user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
 # user2.save
 
-# venue1 = Venue.create!(
-#   user: user2,
-#   name: "Blue Note Jazz Club",
-#   phone_number: "+21-123-4567",
-#   email: "info@bluenote.com",
-#   website:"www.bluenote.com",
-#   latitude_longitude:"40.7306° N, 74.0004° W"
-#   )
 
 user3 = User.create!(
   email: "artist3@example.com",
@@ -223,7 +217,7 @@ user14 = User.create!(
   )
 # user14.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
 # user14.save
-puts " #{User.count} Users created"
+puts "#{User.count} Users created"
 
 puts "Creating artists..."
 file = URI.open("https://imgix.ranker.com/list_img_v2/3719/2803719/original/best-christian-worship-bands-2019?w=817&h=427&fm=jpg&q=50&fit=crop")
@@ -291,7 +285,7 @@ artist12 = Artist.create!(
   website: "www.sennamusic.com",
   genre: "Standup Comedy"
 )
-puts "#{Artist.count}Artists created"
+puts "#{Artist.count} Artists created"
 
 puts "Creating venues..."
 
@@ -301,7 +295,8 @@ venue_house_of_machines = Venue.create!(
   phone_number: "021 426 1400",
   email: "info@houseofmachines.com",
   website: "https://thehouseofmachines.com",
-  address: "84 Shortmarket Street, Cape Town"
+  address: "84 Shortmarket Street, Cape Town",
+  capacity: 400
 )
 venue_house_of_machines_file = URI.open("https://lh3.googleusercontent.com/p/AF1QipNpQcZjrrltw9DVs2WrumLVzfT7e1uQZ0XlAdb4=s0")
 venue_house_of_machines.photo.attach(io: venue_house_of_machines_file, filename: "venue_img.png", content_type: "image/png")
@@ -312,7 +307,8 @@ venue_piano_bar = Venue.create!(
   phone_number: "021 007 5212",
   email: "bookings@thepianobar.co.za",
   website: "http://thepianobar.co.za/",
-  address: "47 Napier Street, De Waterkant, Cape Town"
+  address: "47 Napier Street, De Waterkant, Cape Town",
+  capacity: 150
 )
 venue_piano_bar_file = URI.open("https://www.capetownetc.com/wp-content/uploads/2023/03/334740992_741654507524610_7813281306187061057_n-1024x576.jpg")
 venue_piano_bar.photo.attach(io: venue_piano_bar_file, filename: "venue_img.png", content_type: "image/png")
@@ -323,17 +319,30 @@ venue_armchair_theatre = Venue.create!(
   phone_number: "073 902 4976",
   email: "info@thearmchair.co.za",
   website: "https://ourarmchair.co.za/",
-  address: "135 Lower Main Road, Observatory, Cape Town"
+  address: "135 Lower Main Road, Observatory, Cape Town",
+  capacity: 500
 )
 venue_armchair_theatre_file = URI.open("https://lh3.googleusercontent.com/p/AF1QipNfnsOmBfdZg6V6iuyXVKbf9X3dipyfKgbZpAzX=w768-h768-n-o-v1")
 venue_armchair_theatre.photo.attach(io: venue_armchair_theatre_file, filename: "venue_img.png", content_type: "image/png")
 
+venue_modular = Venue.create!(
+  user: user6,
+  name: "Mødular",
+  phone_number: "071 163 5991",
+  email: "hello@modular.co.za",
+  website: "https://www.instagram.com/modular_cape_town/?hl=en",
+  address: "34 Riebeek Street, Cape Town",
+  capacity: 350
+)
+
+venue_modular_file = URI.open("https://cdn.sanity.io/images/rizm0do5/production/6870aa6fe3513b1ab34fdc9ac52cdc8406314c34-600x900.webp?rect=0,230,600,404&w=690&h=465&q=80&fit=clip&auto=format")
+venue_modular.photo.attach(io: venue_modular_file, filename: "venue_img.png", content_type: "image/png")
 puts "#{Venue.count} Venues created"
 
 puts "Creating events..."
 
-event1 = Event.create!(
-  user_id: user11.id,
+event_kids_festival = Event.create!(
+  user: user11,
   venue: venue_piano_bar,
   title: "Kids Kaleidoscope Festival",
   description: "The Kids Kaleidoscope Festival is a joyous celebration of children's talents, creativity, and boundless
@@ -343,15 +352,29 @@ event1 = Event.create!(
   explore their interests. From lively stage performances and interactive workshops to mouthwatering food stalls and
   exciting games, the Kids Kaleidoscope Festival promises an unforgettable experience filled with laughter, learning,
   and endless fun for children of all ages.",
-  start_datetime: Date.parse("2023-12-2"),
-  start_time: Time.parse("09:00:00"),
-  end_datetime: Date.parse("2023-12-4"),
-  end_time: Time.parse("18:00:00"),
-  ticket_price: 'R100',
-  capacity: '500'
+  start_date: DateTime.parse("2023-12-02 09:00:00"),
+  end_date: DateTime.parse("2023-12-04 18:00:00"),
+  ticket_price: 100
+)
+event_kids_festival_file = URI.open("https://images.entertainment.ie/uploads/2022/06/23124022/kaleido.jpg?w=1280&h=768&q=high")
+event_kids_festival.photo.attach(io: event_kids_festival_file, filename: "event_img.png", content_type: "image/png")
+
+event_dan_t = Event.create!(
+  user: user1,
+  venue: venue_house_of_machines,
+  title: "Dan T Live in Show",
+  description: "For one night only, witness the once in a generation musical talent of Cape Town's own Dan Thackwray.
+  Playing a selection of songs from his vast catalog, Dan's unique voice and broad instrumental mastery will be on
+  show live for one night only, so don't miss out!",
+  start_date: DateTime.parse("2023-07-08 21:00:00"),
+  end_date: DateTime.parse("2023-07-08 23:00:00"),
+  ticket_price: 200
 )
 
-puts "Events created"
+event_dan_t_file = URI.open("https://images.entertainment.ie/uploads/2022/06/23124022/kaleido.jpg?w=1280&h=768&q=high")
+event_dan_t.photo.attach(io: event_dan_t_file, filename: "event_img.png", content_type: "image/png")
+
+puts "#{Event.count} Events created"
 # 20.times do
 #   event = Event.create!(
 #     user_id: user.id,

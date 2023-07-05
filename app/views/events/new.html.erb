@@ -12,10 +12,8 @@
                 <%= f.association :venue %>
                 <%= f.input :title %>
                 <%= f.input :description %>
-                <%= f.input :start_datetime, as: :string, input_html: { class: 'flatpickr-input' } %>
-                <%= f.input :start_time, as: :string, input_html: { class: 'flatpickr-input' } %>
-                <%= f.input :end_datetime, as: :string, input_html: { class: 'flatpickr-input' } %>
-                <%= f.input :end_time, as: :string, input_html: { class: 'flatpickr-input' } %>
+                <%= f.input :start_date, as: :string, input_html: { class: 'flatpickr-input' } %>
+                <%= f.input :end_date, as: :string, input_html: { class: 'flatpickr-input' } %>
                 <%# <%= f.simple_fields_for :event_artists do |event_artist| %>
                   <%# <%= event_artist.association :artist %>
                     <%# <% end %>

@@ -90,3 +90,15 @@
   padding: 15px;
   height: 100%;
 }
+
+.venue-cards-container {
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  padding: 15px;
+}
+
+.venue-card {
+  border: 2px solid green;
+}

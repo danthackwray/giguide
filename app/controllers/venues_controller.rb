@@ -4,6 +4,12 @@ class VenuesController < ApplicationController
   # GET /venues or /venues.json
   def index
     @venues = Venue.all
+    @markers = @venues.geocoded.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude
+      }
+    end
   end
 
   # GET /venues/1 or /venues/1.json
@@ -24,15 +30,11 @@ class VenuesController < ApplicationController
   # POST /venues or /venues.json
   def create
     @venue = Venue.new(venue_params)
-
-    respond_to do |format|
-      if @venue.save
-        format.html { redirect_to venue_url(@venue), notice: "Venue was successfully created." }
-        format.json { render :show, status: :created, location: @venue }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
-      end
+    @venue.user = current_user
+    if @venue.save
+      redirect_to @venue, notice: "Venue was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -62,12 +64,12 @@ class VenuesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-     def set_venue
-       @venue = Venue.find(params[:id])
-     end
+  def set_venue
+    @venue = Venue.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def venue_params
-      params.require(:venue).permit(:user_id, :name, :latitude_longitude, :phone_number, :email, :website)
-    end
+  def venue_params
+    params.require(:venue).permit(:user_id, :name, :latitude, :longitude, :phone_number, :email, :website, :photo)
+  end
 end

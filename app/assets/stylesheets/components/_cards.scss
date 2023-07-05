@@ -138,3 +138,14 @@
   padding:20px;
   height: 100%;
 }
+
+.venue-card {
+  display: flex;
+  border: 2px solid green;
+
+  img {
+    height: 100%;
+    width: 120px;
+    
+  }
+}

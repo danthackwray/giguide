@@ -6,23 +6,13 @@
 </div>
 
 <div class="searchbar">
-  <nav class="search_navbar">
-    <a href="#" class="nav-link">Genre</a>
-    <a href="#" class="nav-link">Event</a>
-    <a href="#" class="nav-link">Venues</a>
-    <a href="#" class="nav-link">Artist</a>
-  </nav>
-  <div class="row justify-content-center">
-      <div class="col-sm-8">
-        <%= form_with url: events_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find an event" %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-  </div>
+  <%= form_with url: root_path, method: :get, class: "d-flex w-50" do %>
+    <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for events..." %>
+    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  <% end %>
 </div>
 
 <div class="events_banner">

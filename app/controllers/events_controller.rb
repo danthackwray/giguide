@@ -3,7 +3,11 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    if params[:query].present?
+      @events = Event.search_by_title_and_description(params[:query])
+    else
+      @events = Event.all
+    end
   end
 
   # GET /events/1 or /events/1.json
@@ -16,6 +20,8 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+
+
   # GET /events/1/edit
   def edit
     @events = Event.find(params[:id])
@@ -24,6 +30,7 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
+    puts "Artist IDs: #{@event.artist_ids.inspect}"
     @event.user = current_user
 
     respond_to do |format|
@@ -36,6 +43,20 @@ class EventsController < ApplicationController
       end
     end
   end
+
+  # def create
+  #   @event = Event.new(event_params)
+  #   @event.user = current_user
+  #   if @event.save
+  #     params[:event][:artist_ids].each do |artist_id|
+  #       @event.event_artists.create(artist_id: artist_id) unless artist_id.empty?
+  #     end
+  #     flash[:success] = "Event created successfully."
+  #     redirect_to @event
+  #   else
+  #     render 'new'
+  #   end
+  # end
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
@@ -69,6 +90,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:user_id, :venue_id, :title, :description, :start_datetime, :start_time, :end_datetime, :end_time, :cover_image, :ticket_price, :capacity)
+      params.require(:event).permit(:user_id, :venue_id, :title, :description, :start_datetime, :start_time, :end_datetime, :end_time, :cover_image, :ticket_price, :capacity, artist_ids: [])
     end
 end

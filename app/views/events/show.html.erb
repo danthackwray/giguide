@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<div class="container-event-show">
 
-<%= render @event %>
+  <div class="name-banner-event-show">
+    <%= @event.title %>
+  </div>
 
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
+  <div class="event-info">
+    <%= render @event %>
 
-  <%= button_to "Delete this event", @event, method: :delete %>
+    <div class="btns-event-show">
+      <%= link_to "Edit this event", edit_event_path(@event), class:"event-button" %>
+      <%= link_to "Back to events", events_path, class:"event-button" %>
+      <%= button_to "Delete this event", @event, method: :delete, class:"event-button" %>
+    </div>
+
+  </div>
 </div>

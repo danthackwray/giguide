@@ -6,11 +6,11 @@
 </div>
 
 <div class="searchbar">
-  <%= form_with url: events_path, method: :get, class: "d-flex w-50" do %>
+  <%= form_with url: root_path, method: :get, class: "d-flex w-50" do %>
     <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find your event needs" %>
+        placeholder: "Search for events..." %>
     <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
   <% end %>
 </div>

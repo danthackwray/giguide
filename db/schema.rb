@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_05_130852) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_05_160203) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,15 +67,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_130852) do
     t.bigint "venue_id", null: false
     t.string "title"
     t.string "description"
-    t.date "start_datetime"
-    t.time "start_time"
-    t.date "end_datetime"
-    t.time "end_time"
-    t.decimal "cover_image"
     t.integer "ticket_price"
-    t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.index ["user_id"], name: "index_events_on_user_id"
     t.index ["venue_id"], name: "index_events_on_venue_id"
   end
@@ -117,6 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_130852) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.integer "capacity"
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 

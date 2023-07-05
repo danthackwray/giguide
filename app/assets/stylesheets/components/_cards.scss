@@ -99,6 +99,16 @@
     width: 100%;
     object-fit: cover;
   }
+
+  .event-card-date-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .event-card-infos {
+    padding: 10px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -137,6 +147,10 @@
   grid-gap: 15px;
   padding:20px;
   height: 100%;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .venue-card {
@@ -146,6 +160,6 @@
   img {
     height: 100%;
     width: 120px;
-    
+
   }
 }

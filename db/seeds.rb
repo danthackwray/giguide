@@ -296,7 +296,14 @@ venue_house_of_machines = Venue.create!(
   email: "info@houseofmachines.com",
   website: "https://thehouseofmachines.com",
   address: "84 Shortmarket Street, Cape Town",
-  capacity: 400
+  capacity: 400,
+  description: "The House of Machines (THoM) was created from a handshake to become a 'good times, great memories'
+  meeting house for a likeminded community, a warm embrace against the white noise of everyday life. We've never
+  wanted to be the coolest, the newest 'go to' spot, we just wanted to create a place where you'd want to hang out
+  with friends, make new ones and simply feel like you belong to something a little more steadfast in this crazy world.
+  Our little homes are all things Coffee, Café, Beer, Cocktails, Music, with a touch of 'Moto Hero' thrown in for good measure.
+  THoM exists to bring together man, woman, and machine, all built around genuine community, authentic history, and
+  with a desire to create memories you'll want to remember. It's our house but your home."
 )
 venue_house_of_machines_file = URI.open("https://lh3.googleusercontent.com/p/AF1QipNpQcZjrrltw9DVs2WrumLVzfT7e1uQZ0XlAdb4=s0")
 venue_house_of_machines.photo.attach(io: venue_house_of_machines_file, filename: "venue_img.png", content_type: "image/png")
@@ -371,7 +378,7 @@ event_dan_t = Event.create!(
   ticket_price: 200
 )
 
-event_dan_t_file = URI.open("https://images.entertainment.ie/uploads/2022/06/23124022/kaleido.jpg?w=1280&h=768&q=high")
+event_dan_t_file = URI.open("https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/128745919_10224156654604968_238489664101038118_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeED9vFUVpwvYU39UzXZlKNLhEVx4DMjiDeERXHgMyOIN9rs3agUgDmOsZlbDs3TvnSadkn3-XbGu_4wLATuUVk2&_nc_ohc=U1WzGc3f4koAX-H6b8c&_nc_ht=scontent-cpt1-1.xx&oh=00_AfCBuNe2dCNAxD7dw_954sejjXNbQepQtMp_Xl39FPosjw&oe=64CD2338")
 event_dan_t.photo.attach(io: event_dan_t_file, filename: "event_img.png", content_type: "image/png")
 
 puts "#{Event.count} Events created"

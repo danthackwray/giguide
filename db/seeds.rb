@@ -88,14 +88,14 @@ user2 = User.create!(
 # user2.profile_pic.attach(io: file, filename: "nes.png", content_type: "image/png")
 # user2.save
 
-venue1 = Venue.create!(
-  user: user2,
-  name: "Blue Note Jazz Club",
-  phone_number: "+21-123-4567",
-  email: "info@bluenote.com",
-  website:"www.bluenote.com",
-  latitude_longitude:"40.7306° N, 74.0004° W"
-  )
+# venue1 = Venue.create!(
+#   user: user2,
+#   name: "Blue Note Jazz Club",
+#   phone_number: "+21-123-4567",
+#   email: "info@bluenote.com",
+#   website:"www.bluenote.com",
+#   latitude_longitude:"40.7306° N, 74.0004° W"
+#   )
 
 user3 = User.create!(
   email: "artist3@example.com",
@@ -233,7 +233,7 @@ artist6 = Artist.create!(
   description: "SRevelation Sounds is a passionate group of musicians dedicated to using their God-given talents to
   bring the message of hope, redemption, and faith to the world. Their music is a fusion of contemporary Christian rock
   and gospel, characterized by powerful vocals, electrifying guitar solos, and uplifting lyrics. Through their energetic
-   performances and heartfelt songs, Revelation Sounds aims to inspire and lead listeners on a spiritual journey. ",
+  performances and heartfelt songs, Revelation Sounds aims to inspire and lead listeners on a spiritual journey. ",
   website: "www.revelationsoundsband.com",
   genre: "Christian/Gospel"
 )
@@ -297,40 +297,45 @@ puts "Creating venues..."
 
 venue1 = Venue.create!(
   user: user2,
-  name: "Blue Note Jazz Club",
-  phone_number: "+21-123-4567",
-  email: "info@bluenote.com",
-  website:"www.bluenote.com",
-  latitude_longitude:"40.7306° N, 74.0004° W"
-  )
+  name: "The House of Machines",
+  phone_number: "021 426 1400",
+  email: "info@houseofmachines.com",
+  website:"https://thehouseofmachines.com",
+  latitude: "-33.92071742191015",
+  longitude: "18.418947030681505"
+)
 
-  venue2 = Venue.create!(
-    user: user3,
-    name: "Electronica Warehouse",
-    phone_number: "+21-654-3210",
-    email: "info@electronica-warehouse.com",
-    website:"www.electronica-warehouse.com",
-    latitude_longitude:"51.5074° N, 0.1278° W"
-    )
+venue2 = Venue.create!(
+  user: user3,
+  name: "The Piano Bar",
+  phone_number: "021 007 5212",
+  email: "bookings@thepianobar.co.za",
+  website: "http://thepianobar.co.za/",
+  latitude: "-33.915356263322174",
+  longitude: "18.417121455260254"
+)
 
-  venue2 = Venue.create!(
-    user: user12,
-    name: "Laugh Factory",
-    phone_number: "+21-369-2580",
-    email: "info@laughfactory.com",
-    website:"wwww.laughfactory.com",
-    latitude_longitude:"34.0974° N, 118.3310° W"
-    )
+venue3 = Venue.create!(
+  user: user12,
+  name: "The Armchair Theatre",
+  phone_number: "073 902 4976",
+  email: "info@thearmchair.co.za",
+  website: "https://ourarmchair.co.za/",
+  latitude: "-33.937809415874966",
+  longitude: "18.468575153977742"
+)
+
 puts "#{Venue.count} Venues created"
 
 puts "Creating events..."
+
 event1 = Event.create!(
   user_id: user11.id,
   venue: venue2,
   title: "Kids Kaleidoscope Festival",
   description: "The Kids Kaleidoscope Festival is a joyous celebration of children's talents, creativity, and boundless
   energy. Designed as a day of fun and inspiration, the festival offers a platform for children to showcase their unique
-   abilities in various fields such as arts, culture, sports, and more. The festival aims to foster a sense of confidence,
+  abilities in various fields such as arts, culture, sports, and more. The festival aims to foster a sense of confidence,
   collaboration, and cultural appreciation among children while providing a safe and inclusive environment for them to
   explore their interests. From lively stage performances and interactive workshops to mouthwatering food stalls and
   exciting games, the Kids Kaleidoscope Festival promises an unforgettable experience filled with laughter, learning,
@@ -338,10 +343,11 @@ event1 = Event.create!(
   start_datetime: Date.parse("2023-12-2"),
   start_time: Time.parse("09:00:00"),
   end_datetime: Date.parse("2023-12-4"),
-  end_time:Time.parse("18:00:00"),
+  end_time: Time.parse("18:00:00"),
   ticket_price: 'R100',
-  capacity:'500'
+  capacity: '500'
 )
+
 puts "Events created"
 # 20.times do
 #   event = Event.create!(

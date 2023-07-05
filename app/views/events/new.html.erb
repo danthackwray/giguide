@@ -19,7 +19,6 @@
                     <%# <% end %>
                 <%= f.input :cover_image, as: :file %>
                 <%= f.input :ticket_price %>
-                <%= f.input :capacity %>
                 <%= f.association :artists, as: :check_boxes, label_method: :name, value_method: :id %>
           <%= f.submit class: 'event-button' %>
           <% end %>

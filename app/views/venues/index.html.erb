@@ -3,12 +3,23 @@
   <h2>VENUES</h2>
 </div>
 
-<div class="venue-cards-container">
-  <% @venues.each do |venue| %>
-    <div class="venue-card">
-      <h3> <%= venue.name %> </h3>
-    </div>
-  <% end %>
+<div class="venues-container">
+  <div class="venue-cards-container">
+    <% @venues.each do |venue| %>
+      <div class="venue-card">
+        <div class=venue-card-img>
+          <%= cl_image_tag venue.photo.key %>
+        </div>
+
+        <h3> <%= venue.name %> </h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="venues-map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
 

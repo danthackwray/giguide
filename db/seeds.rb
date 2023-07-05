@@ -295,35 +295,38 @@ puts "#{Artist.count}Artists created"
 
 puts "Creating venues..."
 
-venue1 = Venue.create!(
+venue_house_of_machines = Venue.create!(
   user: user2,
   name: "The House of Machines",
   phone_number: "021 426 1400",
   email: "info@houseofmachines.com",
-  website:"https://thehouseofmachines.com",
-  latitude: "-33.92071742191015",
-  longitude: "18.418947030681505"
+  website: "https://thehouseofmachines.com",
+  address: "84 Shortmarket Street, Cape Town"
 )
+venue_house_of_machines_file = URI.open("https://lh3.googleusercontent.com/p/AF1QipNpQcZjrrltw9DVs2WrumLVzfT7e1uQZ0XlAdb4=s0")
+venue_house_of_machines.photo.attach(io: venue_house_of_machines_file, filename: "venue_img.png", content_type: "image/png")
 
-venue2 = Venue.create!(
+venue_piano_bar = Venue.create!(
   user: user3,
   name: "The Piano Bar",
   phone_number: "021 007 5212",
   email: "bookings@thepianobar.co.za",
   website: "http://thepianobar.co.za/",
-  latitude: "-33.915356263322174",
-  longitude: "18.417121455260254"
+  address: "47 Napier Street, De Waterkant, Cape Town"
 )
+venue_piano_bar_file = URI.open("https://www.capetownetc.com/wp-content/uploads/2023/03/334740992_741654507524610_7813281306187061057_n-1024x576.jpg")
+venue_piano_bar.photo.attach(io: venue_piano_bar_file, filename: "venue_img.png", content_type: "image/png")
 
-venue3 = Venue.create!(
+venue_armchair_theatre = Venue.create!(
   user: user12,
   name: "The Armchair Theatre",
   phone_number: "073 902 4976",
   email: "info@thearmchair.co.za",
   website: "https://ourarmchair.co.za/",
-  latitude: "-33.937809415874966",
-  longitude: "18.468575153977742"
+  address: "135 Lower Main Road, Observatory, Cape Town"
 )
+venue_armchair_theatre_file = URI.open("https://lh3.googleusercontent.com/p/AF1QipNfnsOmBfdZg6V6iuyXVKbf9X3dipyfKgbZpAzX=w768-h768-n-o-v1")
+venue_armchair_theatre.photo.attach(io: venue_armchair_theatre_file, filename: "venue_img.png", content_type: "image/png")
 
 puts "#{Venue.count} Venues created"
 
@@ -331,7 +334,7 @@ puts "Creating events..."
 
 event1 = Event.create!(
   user_id: user11.id,
-  venue: venue2,
+  venue: venue_piano_bar,
   title: "Kids Kaleidoscope Festival",
   description: "The Kids Kaleidoscope Festival is a joyous celebration of children's talents, creativity, and boundless
   energy. Designed as a day of fun and inspiration, the festival offers a platform for children to showcase their unique

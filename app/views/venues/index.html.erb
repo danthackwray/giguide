@@ -10,8 +10,12 @@
         <div class=venue-card-img>
           <%= cl_image_tag venue.photo.key %>
         </div>
-
-        <h3> <%= venue.name %> </h3>
+        <div class="venue-title-section">
+          <h3> <%= venue.name %> </h3>
+        </div>
+        <div class="description-section">
+          <p><%= truncate(venue.description, length: 210, separator: /\s/) %></p>
+        </div>
       </div>
     <% end %>
   </div>

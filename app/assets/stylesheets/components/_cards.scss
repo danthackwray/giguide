@@ -69,11 +69,30 @@
 // }
 
 .event-card {
+  h3 {
+    font-family:'Martel', serif;
+    text-decoration: none;
+  }
+  h5 {
+    font-family:'Martel', serif;
+    text-decoration: none;
+  }
+  h4 {
+    font-family:'Martel', serif;
+    text-decoration: none;
+  }
+
   border: 1px solid rgb(203, 108, 255);
   border-radius: 15px;
   overflow: hidden;
   background-color: rgb(57, 13, 72);
   color: white;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 10px;
+  text-align: center;
+
+
 
   img {
     height: 200px;
@@ -82,11 +101,40 @@
   }
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .event-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .event-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .event-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .event-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
 .event-cards-container {
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
-  padding: 15px;
+  padding:20px;
   height: 100%;
 }

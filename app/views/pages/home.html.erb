@@ -34,9 +34,9 @@
     <%= link_to event_path(event) do %>
       <div class="event-card">
         <%= image_tag("CAPE.jpg") %>
-        <%= event.title %>
-        <%= event.start_datetime.strftime("%A, %b %d")%>
-        <%= event.ticket_price %>
+        <h3><%= event.title %></h3>
+        <h5><%= event.start_datetime.strftime("%A, %b %d")%></h5>
+        <h4> R <%= event.ticket_price %></h4>
       </div>
     <% end %>
   <% end %>

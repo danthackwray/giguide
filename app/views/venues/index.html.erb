@@ -6,17 +6,32 @@
 <div class="venues-container">
   <div class="venue-cards-container">
     <% @venues.each do |venue| %>
-      <div class="venue-card">
-        <div class=venue-card-img>
-          <%= cl_image_tag venue.photo.key %>
+      <%= link_to venue_path(venue) do %>
+        <div class="venue-card">
+          <div class="venue-card-image">
+            <%= cl_image_tag venue.photo.key %>
+          </div>
+          <div class="venue-card-infos">
+            <h3> <%= venue.name %> </h3>
+            <p><%= truncate(venue.description, length: 210, separator: /\s/) %></p>
+            <div class="venue-card-infos-bottom">
+              <div class="venue-icon-and-info">
+                <h6><i class="fa-solid fa-phone"></i></h6>
+                <h6><%= venue.phone_number %></h6>
+              </div>
+              <div class="venue-icon-and-info">
+                <h6><i class="fa-solid fa-users"></i></h6>
+                <h6><%= venue.capacity %></h6>
+              </div>
+              <div class="venue-icon-and-info">
+                <h6><i class="fa-solid fa-envelope"></i></h6>
+                <h6><%= venue.email %></h6>
+              </div>
+
+            </div>
+          </div>
         </div>
-        <div class="venue-title-section">
-          <h3> <%= venue.name %> </h3>
-        </div>
-        <div class="description-section">
-          <p><%= truncate(venue.description, length: 210, separator: /\s/) %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <div class="venues-map"
@@ -25,6 +40,3 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-
-
-<%= link_to "New venue", new_venue_path %>

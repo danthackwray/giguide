@@ -58,7 +58,7 @@ puts "Creating amazing seeds..."
 
 puts "Creating users..."
 
-user1_file = URI.open("https://singersroom.com/wp-content/uploads/2023/02/Best-Female-Rock-Songs-scaled.jpg")
+# user1_file = URI.open("https://singersroom.com/wp-content/uploads/2023/02/Best-Female-Rock-Songs-scaled.jpg")
 user1 = User.create!(
   email: "a@gmail.com",
   password: "123456",
@@ -74,8 +74,8 @@ user2 = User.create!(
   username: "MusicalGenius",
   role: "Artist"
 )
-user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
-user2.save
+# user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
+# user2.save
 
 artist1 = Artist.create!(
   user: user1,
@@ -267,7 +267,6 @@ alexander_bar_upstairs_theatre = Venue.create!(
 alexander_bar_upstairs_theatre_file = URI.open("https://www.capetownmagazine.com//media_lib/r2/32606fb8953779da7fc32382c6fae14a.img.jpg")
 alexander_bar_upstairs_theatre.photo.attach(io: alexander_bar_upstairs_theatre_file, filename: "venue_img.png", content_type: "image/png")
 
-
 puts "#{Venue.count} Venues created"
 
 puts "Creating events..."
@@ -342,13 +341,52 @@ event_battle_of_the_instruments = Event.create!(
   venue: venue_armchair_theatre,
   title: "Battle of the Instruments",
   description: "Join us at Karaoke Kong for an EPIC showdown! Introducing the Battle of the Instruments competition!
-  Show off your talent on stage with the instrument of your choice – from guitars to flutes harps and everything in-between!",
+  Show off your talent on stage with the instrument of your choice from guitars to flutes harps and everything in-between!",
   start_date: DateTime.parse("2023-09-08 18:00:00"),
   end_date: DateTime.parse("2023-09-08 23:00:00"),
   ticket_price: 229
 )
 event_battle_of_the_instruments_file = URI.open("https://cdn2.allevents.in/thumbs/thumb6496c97808a7e.jpg")
 event_battle_of_the_instruments.photo.attach(io: event_battle_of_the_instruments_file, filename: "event_img.png", content_type: "image/png")
+
+event_live_jazz_fridays = Event.create!(
+  user: user1,
+  venue: venue_piano_bar,
+  title: "Friday Live Jazz Music Best Views In Cape Town",
+  description: "With incredible local talent spearheaded by musical maestro George Sax accompanied by
+  great drink specials - it's the perfect way to relax into the groove of the weekend.",
+  start_date: DateTime.parse("2023-12-02 09:00:00"),
+  end_date: DateTime.parse("2023-12-04 18:00:00"),
+  ticket_price: 50
+)
+event_live_jazz_fridays_file = URI.open("https://thesanctuarycapetown.com/wp-content/uploads/2022/12/event-2-1.jpg")
+event_live_jazz_fridays.photo.attach(io: event_live_jazz_fridays_file, filename: "event_img.png", content_type: "image/png")
+
+event_live_earth_blues = Event.create!(
+  user: user1,
+  venue: venue_piano_bar,
+  title: "Blues Rock N Funk Tri0",
+  description: "With incredible local talent spearheaded by musical maestro George Sax accompanied by
+  great drink specials - it's the perfect way to relax into the groove of the weekend.",
+  start_date: DateTime.parse("2023-07-08 09:00:00"),
+  end_date: DateTime.parse("2023-07-08 18:00:00"),
+  ticket_price: 50
+)
+event_live_earth_blues_file = URI.open("https://www.cometocapetown.com/wp-content/uploads/2018/05/1-5-1024x746.jpg")
+event_live_earth_blues.photo.attach(io: event_live_earth_blues_file, filename: "event_img.png", content_type: "image/png")
+
+event_third_house_party = Event.create!(
+  user: user1,
+  venue: venue_armchair_theatre,
+  title: "Third House Party",
+  description: "Writing poetry may be a mostly individual experience, but sharing in front of a live audience
+  can be an equally powerful step in the art. For those looking for the right atmosphere and audience to share their verse, Third House Poetry is a growing community dedicated to hosting poetry open mic events. After paying a small covering charge to get inside, a sign-up sheet is available for those wishing to share.",
+  start_date: DateTime.parse("2023-08-08 09:00:00"),
+  end_date: DateTime.parse("2023-08-08 18:00:00"),
+  ticket_price: 55
+)
+event_third_house_party_file = URI.open("https://i0.wp.com/capecreativecollective.co.za/wp-content/uploads/2022/10/INTERNET-GIRL-@-RC-14-10-22-@ihatelorcan-17-scaled.jpg?resize=768%2C512&ssl=1")
+event_third_house_party.photo.attach(io: event_third_house_party_file, filename: "event_img.png", content_type: "image/png")
 
 puts "#{Event.count} Events created"
 # 20.times do

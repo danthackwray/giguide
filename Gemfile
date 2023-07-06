@@ -5,7 +5,7 @@ ruby "3.1.2"
 
 gem "cloudinary"
 
-gem "geocoder"
+gem "geocoder", "~> 1.8.2"
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

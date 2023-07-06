@@ -54,10 +54,15 @@
 
 
 #artist_genre_jazz + label {
-  color: black;
+  color: rgb(53, 51, 51);
 }
 
 #artist_genre_jazz:checked + label {
   background-color: #FFC65A;
   border-color: #FFC65A;
+}
+
+.new-artist-background{
+  color: rgb(53, 51, 51);
+  background-color: rgba(225, 225, 225, 0.5);
 }

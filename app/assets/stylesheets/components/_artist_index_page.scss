@@ -35,3 +35,50 @@
   text-align: center;
   margin-top: 20px;
 }
+
+.artist-card {
+  h3 {
+    font-family:'Martel', serif;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-family:'Inter', sans-serif;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+  h4 {
+    font-family:'Inter', sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  border: 1px solid rgb(203, 108, 255);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgb(57, 13, 72);
+  color: white;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 10px;
+  // text-align: center;
+
+
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .artist-card-date-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .artist-card-infos {
+    padding: 20px;
+    // border: 1px solid white;
+  }
+}

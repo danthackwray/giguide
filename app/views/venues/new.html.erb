@@ -10,9 +10,13 @@
         <h3 class="text-center">Upload your venue details</h3>
           <%= simple_form_for @venue do |f| %>
             <%= f.input :name, placeholder: 'JamRock Theatre' %>
+
+            <%= f.input :address %>
+            <%= f.input :phone_number %>
             <%= f.input :website %>
             <%= f.input :email %>
             <%= f.input :capacity %>
+            <%= f.input :description %>
             <%= f.input :photo, as: :file %>
             <%= f.submit class: 'venue-button' %>
           <% end %>

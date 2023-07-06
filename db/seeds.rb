@@ -65,8 +65,8 @@ user1 = User.create!(
   username: "MusicCreator",
   role: "Artist"
 )
-# user1.photo.attach(io: user1_file, filename: "nes.png", content_type: "image/png")
-# user1.save
+user1.photo.attach(io: user1_file, filename: "nes.png", content_type: "image/png")
+user1.save
 
 user2 = User.create!(
   email: "dan@gmail.com",
@@ -74,8 +74,10 @@ user2 = User.create!(
   username: "MusicalGenius",
   role: "Artist"
 )
-user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
-user2.save
+# user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
+# user2.save
+
+artist1_file = URI.open("https://images.unsplash.com/photo-1593031259890-cd71dcc8241f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80")
 
 artist1 = Artist.create!(
   user: user1,
@@ -88,6 +90,9 @@ artist1 = Artist.create!(
   website: "www.soulfulsista.com",
   genre: "Blues"
 )
+
+artist1.photo.attach(io: artist1_file, filename: "soulsister.png", content_type: "image/png")
+artist1.save
 
 artist2 = Artist.create!(
   user: user2,

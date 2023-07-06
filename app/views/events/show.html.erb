@@ -1,18 +1,16 @@
 <div class="container-event-show">
-
   <div class="name-banner-event-show">
     <%= @event.title %>
   </div>
-
   <div class="event-info">
     <%= render @event %>
     <%# <%= cl_image_tag @event.photo.key %>
-
     <div class="btns-event-show">
-      <%= link_to "Edit this event", edit_event_path(@event), class:"event-button" %>
-      <%= link_to "Back to events", events_path, class:"event-button" %>
-      <%= button_to "Delete this event", @event, method: :delete, class:"event-button" %>
+      <%= link_to "All events", events_path, class:"event-button" %>
+      <% if @event.user == current_user %>
+        <%= link_to "Edit this event", edit_event_path(@event), class:"event-button" %>
+        <%= button_to "Delete this event", @event, method: :delete, class:"event-button" %>
+      <% end %>
     </div>
-
   </div>
 </div>

@@ -2,12 +2,12 @@
   <div class="venue-info">
     <%= render @venue %>
     # <%= cl_image_tag @venue.photo.key %>
-
     <div class="btns-venue-show">
-      <%= link_to "Edit this venue", edit_venue_path(@venue), class:"venue-button" %>
-      <%= link_to "Back to venues", venues_path, class:"venue-button"  %>
-      <%= button_to "Destroy this venue", @venue, method: :delete, class:"venue-button"  %>
+      <%= link_to "All venues", venues_path, class:"venue-button"  %>
+      <% if @venue.user == current_user %>
+        <%= link_to "Edit this venue", edit_venue_path(@venue), class:"venue-button" %>
+        <%= button_to "Delete this venue", @venue, method: :delete, class:"venue-button"  %>
+      <% end %>
     </div>
-
   </div>
 </div>

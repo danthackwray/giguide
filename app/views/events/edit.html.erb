@@ -1,10 +1,12 @@
-<h1>Editing event</h1>
+<div class="container">
+  <h1>Editing event</h1>
 
-<%= render "form", event: @event %>
+  <%= render "form", event: @event %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Show this event", @event %> |
-  <%= link_to "Back to events", events_path %>
+  <div>
+    <%= link_to "Back to this event", @event %> |
+    <%= link_to "All events", events_path %>
+  </div>
 </div>

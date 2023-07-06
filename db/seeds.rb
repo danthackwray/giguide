@@ -351,6 +351,7 @@ venue_modular = Venue.create!(
 
 venue_modular_file = URI.open("https://cdn.sanity.io/images/rizm0do5/production/6870aa6fe3513b1ab34fdc9ac52cdc8406314c34-600x900.webp?rect=0,230,600,404&w=690&h=465&q=80&fit=clip&auto=format")
 venue_modular.photo.attach(io: venue_modular_file, filename: "venue_img.png", content_type: "image/png")
+
 puts "#{Venue.count} Venues created"
 
 puts "Creating events..."

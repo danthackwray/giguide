@@ -1,17 +1,23 @@
-<div class="events-index-banner">
-  <h1>Events</h1>
+<div class="events_banner">
+  <h2>EVENTS</h2>
 </div>
 
 
-<div id="events">
-  <% @events.each do |event| %>
-
-    <div class="events-index-card">
-      <%= event.title %>
-      <%= link_to "Show this event", event, class:"main-button" %>
-    </div>
-
+<div class="event-cards-container">
+  <% @events.each do |event|%>
+    <%= link_to event_path(event) do %>
+      <div class="event-card">
+        <%= cl_image_tag event.photo.key %>
+        <div class="event-card-infos">
+          <h3><%= event.title %></h3>
+          <h5><%= event.venue.name %></h5>
+          <div class="event-card-date-price">
+            <h5><%= event.start_date.strftime("%I:%M %p, %A, %b %d")%></h5>
+            <h4>R <%= event.ticket_price %></h4>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
-
-<%= link_to "New event", new_event_path %>
+<%= link_to "New event", new_event_path, class:"main-button"%>

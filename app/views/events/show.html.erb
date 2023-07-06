@@ -5,8 +5,8 @@
   </div>
 
   <div class="event-info">
-    <%# <%= render @event %>
-    <%= cl_image_tag @event.photo.key %>
+    <%= render @event %>
+    <%# <%= cl_image_tag @event.photo.key %>
 
     <div class="btns-event-show">
       <%= link_to "Edit this event", edit_event_path(@event), class:"event-button" %>

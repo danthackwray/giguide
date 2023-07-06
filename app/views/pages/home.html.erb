@@ -26,8 +26,9 @@
         <%= cl_image_tag event.photo.key %>
         <div class="event-card-infos">
           <h3><%= event.title %></h3>
+          <h5><%= event.venue.name %></h5>
           <div class="event-card-date-price">
-            <h5><%= event.start_date.strftime("%A, %b %d")%></h5>
+            <h5><%= event.start_date.strftime("%I:%M %p, %A, %b %d")%></h5>
             <h4>R <%= event.ticket_price %></h4>
           </div>
         </div>

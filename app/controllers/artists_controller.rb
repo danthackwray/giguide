@@ -60,13 +60,15 @@ class ArtistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_artist
     @artist = Artist.find(params[:id])
   end
 
-    # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
   def artist_params
     params.require(:artist).permit(:user_id, :name, :genre, :description, :website, :photo)
   end
+
+
 end

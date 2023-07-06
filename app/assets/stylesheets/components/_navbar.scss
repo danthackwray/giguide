@@ -1,6 +1,9 @@
 .navbar-lewagon {
-  justify-content: space-between;
   background: white;
+  background-image: url('NAVBAR');
+  background-size: cover;
+  font-family: 'Martel', serif;
+  font-weight: bold;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,14 +12,17 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-.navbar-brand img {
   border-radius: 50%;
 }
 
-.navbar-lewagon {
-  background-image: url('NAVBAR');
-  background-size: cover;
+.navbar-collapse.justify-content-end {
+  margin-left: auto;
 }
 
+.navbar-nav .nav-item {
+  margin-left: 60px;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+}

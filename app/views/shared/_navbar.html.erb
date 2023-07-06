@@ -4,34 +4,23 @@
       <%= image_tag("logo.png", alt: "Logo") %>
     <% end %>
 
-<nav class="navbar-menu">
-  <ul class="navbar-links">
-    <li><%= link_to 'CREATE EVENT', new_event_path, class: 'navbar-link' %></li>
-    <li><%= link_to 'CREATE VENUE', new_venue_path, class: 'navbar-link' %></li>
-    <li><%= link_to 'CREATE ARTIST', new_artist_path, class: 'navbar-link' %></li>
-  </ul>
-</nav>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             DISCOVER
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink1">
             <li><%= link_to 'EVENTS', events_path, class: 'dropdown-item' %></li>
             <li><%= link_to 'VENUES', venues_path, class: 'dropdown-item' %></li>
             <li><%= link_to 'ARTISTS', artists_path, class: 'dropdown-item' %></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             CREATE
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink2">
             <li><%= link_to 'EVENT', new_event_path, class: 'dropdown-item' %></li>
             <li><%= link_to 'VENUE', new_venue_path, class: 'dropdown-item' %></li>
             <li><%= link_to 'ARTIST', new_artist_path, class: 'dropdown-item' %></li>
@@ -40,17 +29,12 @@
       </ul>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <% if user_signed_in? %>
-        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item",class: "nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item nav-link" %>
       <% else %>
         <%= link_to "Login", new_user_session_path, class: "nav-link" %>
       <% end %>
     </div>
-
   </div>
 </div>

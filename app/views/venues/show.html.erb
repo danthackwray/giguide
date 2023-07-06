@@ -1,7 +1,7 @@
 <div class="container-venue-show">
   <div class="venue-info">
-    <%# <%= render @venue %>
-    <%= cl_image_tag @venue.photo.key %>
+    <%= render @venue %>
+    # <%= cl_image_tag @venue.photo.key %>
 
     <div class="btns-venue-show">
       <%= link_to "Edit this venue", edit_venue_path(@venue), class:"venue-button" %>

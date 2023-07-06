@@ -105,7 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_195046) do
   create_table "venues", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "email"
     t.string "website"
     t.datetime "created_at", null: false

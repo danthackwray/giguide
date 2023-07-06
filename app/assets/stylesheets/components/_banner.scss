@@ -9,6 +9,7 @@
   background-position: bottom;
   color: white;
   -webkit-text-stroke: 1px white;
+
 }
 
 .banner img {
@@ -18,15 +19,20 @@
 
 .banner-text {
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-family: $martel;
 }
 
 .banner-text h2 {
+  background-color: rgba(0, 0, 0, 0.8); /* Set desired dim color and opacity */
+  border-radius: 30px;
+  padding: 30px;
+  z-index: -1;
   font-size: 80px;
   font-weight: 700;
   margin-bottom: 10px;
   font-family: $martel;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 5);
 }
 
 .banner-text p {

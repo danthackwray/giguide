@@ -299,7 +299,6 @@ event_dan_t = Event.create!(
   end_date: DateTime.parse("2023-07-08 23:00:00"),
   ticket_price: 200
 )
-
 event_dan_t_file = URI.open("https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/128745919_10224156654604968_238489664101038118_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeED9vFUVpwvYU39UzXZlKNLhEVx4DMjiDeERXHgMyOIN9rs3agUgDmOsZlbDs3TvnSadkn3-XbGu_4wLATuUVk2&_nc_ohc=U1WzGc3f4koAX-H6b8c&_nc_ht=scontent-cpt1-1.xx&oh=00_AfCBuNe2dCNAxD7dw_954sejjXNbQepQtMp_Xl39FPosjw&oe=64CD2338")
 event_dan_t.photo.attach(io: event_dan_t_file, filename: "event_img.png", content_type: "image/png")
 
@@ -317,25 +316,37 @@ event_turn_into_a_cyclist_at_full_moon = Event.create!(
   end_date: DateTime.parse("2023-07-08 23:00:00"),
   ticket_price: 50
 )
-
-event_dan_t = Event.create!(
-  user: user1,
-  venue: venue_Mødular,
-  title: "Dan T Live in Show",
-  description: "For one night only, witness the once in a generation musical talent of Cape Town's own Dan Thackwray.
-  Playing a selection of songs from his vast catalog, Dan's unique voice and broad instrumental mastery will be on
-  show live for one night only, so don't miss out!",
-  start_date: DateTime.parse("2023-07-08 21:00:00"),
-  end_date: DateTime.parse("2023-07-08 23:00:00"),
-  ticket_price: 200
-)
-
-event_dan_t_file = URI.open("https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/128745919_10224156654604968_238489664101038118_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeED9vFUVpwvYU39UzXZlKNLhEVx4DMjiDeERXHgMyOIN9rs3agUgDmOsZlbDs3TvnSadkn3-XbGu_4wLATuUVk2&_nc_ohc=U1WzGc3f4koAX-H6b8c&_nc_ht=scontent-cpt1-1.xx&oh=00_AfCBuNe2dCNAxD7dw_954sejjXNbQepQtMp_Xl39FPosjw&oe=64CD2338")
-event_dan_t.photo.attach(io: event_dan_t_file, filename: "event_img.png", content_type: "image/png")
-
 event_turn_into_a_cyclist_at_full_moon_file = URI.open("https://www.capetownmagazine.com/media_lib/preview/14dd6c845843efe82a57b7ec761025e4.preview.jpg")
 event_turn_into_a_cyclist_at_full_moon.photo.attach(io: event_turn_into_a_cyclist_at_full_moon_file, filename: "event_img.png", content_type: "image/png")
 
+event_forgotten_culture_selectors = Event.create!(
+  user: user2,
+  venue: venue_modular,
+  title: "Forgotten Culture Selectors",
+  description: "Forgotten Culture Selectors aims to showcase what the art of DJing and performance is all about.
+  A space giving artists complete freedom over genres played, moods felt and track selection. Authentic vibes coupled
+  with new renovations at the beloved Trenchtown makes us excited to settle into the heart of Obs for the very first time.
+  The pizza oven will be firing and there will be loads of ridiculous drink specials on offer, so you won't be disappointed.
+  The music played will be spread across two floors. Terrace and Garden by name, good music by game. Artists will be released one by one in the build up to the event.",
+  start_date: DateTime.parse("2023-08-08 21:00:00"),
+  end_date: DateTime.parse("2023-08-09 23:00:00"),
+  ticket_price: 300
+)
+event_forgotten_culture_selectors_file = URI.open("https://images.pexels.com/photos/1482476/pexels-photo-1482476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+event_forgotten_culture_selectors.photo.attach(io: event_forgotten_culture_selectors_file, filename: "event_img.png", content_type: "image/png")
+
+event_battle_of_the_instruments = Event.create!(
+  user: user1,
+  venue: venue_armchair_theatre,
+  title: "Battle of the Instruments",
+  description: "Join us at Karaoke Kong for an EPIC showdown! Introducing the Battle of the Instruments competition!
+  Show off your talent on stage with the instrument of your choice – from guitars to flutes harps and everything in-between!",
+  start_date: DateTime.parse("2023-09-08 18:00:00"),
+  end_date: DateTime.parse("2023-09-08 23:00:00"),
+  ticket_price: 229
+)
+event_battle_of_the_instruments_file = URI.open("https://cdn2.allevents.in/thumbs/thumb6496c97808a7e.jpg")
+event_battle_of_the_instruments.photo.attach(io: event_battle_of_the_instruments_file, filename: "event_img.png", content_type: "image/png")
 
 puts "#{Event.count} Events created"
 # 20.times do

@@ -74,8 +74,8 @@ user2 = User.create!(
   username: "MusicalGenius",
   role: "Artist"
 )
-user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
-user2.save
+# user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
+# user2.save
 
 artist1 = Artist.create!(
   user: user1,

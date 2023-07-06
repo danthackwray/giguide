@@ -1,2 +1,6 @@
-<h2><%= venue.name %></h2>
-<p><%= venue.address %></p>
+<div class="marker-info-window">
+  <%= link_to venue_path(venue) do %>
+    <h4><%= venue.name %></h4>
+    <p><%= venue.address %></p>
+  <% end %>
+</div>

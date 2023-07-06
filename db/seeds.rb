@@ -77,7 +77,10 @@ user2 = User.create!(
 # user2.photo.attach(io: user2_file, filename: "nes.png", content_type: "image/png")
 # user2.save
 
+
 artist1_file = URI.open("https://images.unsplash.com/photo-1593031259890-cd71dcc8241f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80")
+
+
 
 artist1 = Artist.create!(
   user: user1,

@@ -315,7 +315,10 @@ venue_piano_bar = Venue.create!(
   email: "bookings@thepianobar.co.za",
   website: "http://thepianobar.co.za/",
   address: "47 Napier Street, De Waterkant, Cape Town",
-  capacity: 150
+  capacity: 150,
+  description: "Step into our New York-inspired restaurant, where you'll find a vibrant atmosphere inviting you to indulge.
+  The carefully curated décor combines modern and vintage elements, creating an atmosphere both chic and welcoming. With daily
+  live music it is the perfect spot for an unforgettable night out. Come to join us for an evening of great food, handcrafted cocktails, and live music."
 )
 venue_piano_bar_file = URI.open("https://www.capetownetc.com/wp-content/uploads/2023/03/334740992_741654507524610_7813281306187061057_n-1024x576.jpg")
 venue_piano_bar.photo.attach(io: venue_piano_bar_file, filename: "venue_img.png", content_type: "image/png")
@@ -327,7 +330,9 @@ venue_armchair_theatre = Venue.create!(
   email: "info@thearmchair.co.za",
   website: "https://ourarmchair.co.za/",
   address: "135 Lower Main Road, Observatory, Cape Town",
-  capacity: 500
+  capacity: 500,
+  description: "The Independent Armchair Theatre is a live music venue in Cape Town, South Africa. The Armchair opened
+  in 1998 and hosted many different forms of live entertainment, including live music, comedians, film festivals, plays and exhibitions."
 )
 venue_armchair_theatre_file = URI.open("https://lh3.googleusercontent.com/p/AF1QipNfnsOmBfdZg6V6iuyXVKbf9X3dipyfKgbZpAzX=w768-h768-n-o-v1")
 venue_armchair_theatre.photo.attach(io: venue_armchair_theatre_file, filename: "venue_img.png", content_type: "image/png")
@@ -339,7 +344,9 @@ venue_modular = Venue.create!(
   email: "hello@modular.co.za",
   website: "https://www.instagram.com/modular_cape_town/?hl=en",
   address: "34 Riebeek Street, Cape Town",
-  capacity: 350
+  capacity: 250,
+  description: "Mødular. has created a space for something different, where clubbers are able to go dance and experience
+  evoking and forward thinking electronic music in a late night club setting. 'Techno is everything you haven't imagined yet' - Jeff Mills."
 )
 
 venue_modular_file = URI.open("https://cdn.sanity.io/images/rizm0do5/production/6870aa6fe3513b1ab34fdc9ac52cdc8406314c34-600x900.webp?rect=0,230,600,404&w=690&h=465&q=80&fit=clip&auto=format")

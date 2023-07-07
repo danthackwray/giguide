@@ -12,7 +12,6 @@
       <%= cl_image_tag event.venue.photo.key %>
       <div class="event-card-infos">
         <h3> <%= event.venue.name %> </h3>
-        <p><%= truncate(event.venue.description, length: 210, separator: /\s/) %></p>
         <div class="event-card-date-price">
           <div>
             <h6><i class="fa-solid fa-phone"></i></h6>

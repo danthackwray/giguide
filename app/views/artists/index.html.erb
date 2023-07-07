@@ -1,7 +1,7 @@
 <div class="events_banner">
   <h2>ARTISTS</h2>
 </div>
-<div class="searchbar">
+<div class="artists-searchbar">
   <%= form_with url: root_path, method: :get, class: "d-flex w-50" do %>
     <%= text_field_tag :query,
         params[:query],
@@ -26,4 +26,3 @@
     <% end %>
   <% end %>
 </div>
-

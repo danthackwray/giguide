@@ -219,7 +219,7 @@ venue_armchair_theatre.photo.attach(io: venue_armchair_theatre_file, filename: "
 
 venue_modular = Venue.create!(
   user: user1,
-  name: "Mødular",
+  name: "Mødular.",
   phone_number: "071 163 5991",
   email: "hello@modular.co.za",
   website: "https://www.instagram.com/modular_cape_town/?hl=en",

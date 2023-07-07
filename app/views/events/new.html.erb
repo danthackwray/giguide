@@ -17,7 +17,7 @@
                 <%# <%= f.simple_fields_for :event_artists do |event_artist| %>
                   <%# <%= event_artist.association :artist %>
                     <%# <% end %>
-                <%= f.input :cover_image, as: :file %>
+                <%= f.input :photo, as: :file %>
                 <%= f.input :ticket_price %>
                 <%= f.association :artists, as: :check_boxes, label_method: :name, value_method: :id %>
           <%= f.submit class: 'event-button' %>

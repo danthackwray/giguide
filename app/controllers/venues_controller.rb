@@ -71,6 +71,6 @@ class VenuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
   def venue_params
-    params.require(:venue).permit(:user_id, :name, :latitude, :longitude, :phone_number, :email, :website, :photo, :capacity)
+    params.require(:venue).permit(:user_id, :name, :description, :latitude, :longitude, :phone_number, :email, :website, :photo, :capacity)
   end
 end

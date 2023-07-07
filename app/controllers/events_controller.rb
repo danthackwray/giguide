@@ -32,31 +32,12 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     puts "Artist IDs: #{@event.artist_ids.inspect}"
     @event.user = current_user
-
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      redirect_to @event, notice: "Event was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
-
-  # def create
-  #   @event = Event.new(event_params)
-  #   @event.user = current_user
-  #   if @event.save
-  #     params[:event][:artist_ids].each do |artist_id|
-  #       @event.event_artists.create(artist_id: artist_id) unless artist_id.empty?
-  #     end
-  #     flash[:success] = "Event created successfully."
-  #     redirect_to @event
-  #   else
-  #     render 'new'
-  #   end
-  # end
 
   # PATCH/PUT /events/1 or /events/1.json
   def update

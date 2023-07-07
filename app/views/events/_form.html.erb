@@ -1,23 +1,22 @@
-
 <%= simple_form_for(@event) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+  
   <div class="form-inputs">
     <%= f.association :venue %>
     <%= f.input :title %>
-    <%= f.input :artists %>
     <%= f.input :description %>
-    <%= f.input :start_datetime %>
-    <%= f.input :start_time %>
-    <%= f.input :end_datetime %>
-    <%= f.input :end_time %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :ticket_price %>
-    <%= f.input :capacity %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <%= f.input :start_date, as: :string, input_html: { class: 'flatpickr-input' } %>
+    <%= f.input :end_date, as: :string, input_html: { class: 'flatpickr-input' } %>
+    <%# <%= f.simple_fields_for :event_artists do |event_artist| %>
+      <%# <%= event_artist.association :artist %>
+      <%# <% end %>
+      <%= f.input :cover_image, as: :file %>
+      <%= f.input :ticket_price %>
+      <%= f.association :artists, as: :check_boxes, label_method: :name, value_method: :id %>
+      <%= f.submit class: 'event-button' %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>

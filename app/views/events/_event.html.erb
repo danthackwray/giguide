@@ -38,14 +38,15 @@
 <% else %>
   <% @event.artists.each do |artist| %>
     <%= link_to artist_path(artist) do %>
-      <div class="artist-card">
+      <div class="event-card">
         <% if artist.photo.attached? %>
           <%= cl_image_tag artist.photo.key %>
         <% else %>
           <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="microphone">
         <% end %>
-        <div class="artist-card-infos">
-          <%= artist.name %>
+        <div class="event-card-infos">
+          <h3><%= artist.name %></h3>
+          <h6>Genres: <%= artist.genre %></h6>
         </div>
       </div>
     <% end %>

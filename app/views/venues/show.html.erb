@@ -26,7 +26,7 @@
           </div>
           <h4>Upcoming Events:</h4>
           <div class="venue-show-events-section">
-            <% if @venue.events != nil %>
+            <% if @venue.events != [] %>
               <% @venue.events.each do |event| %>
                 <%= link_to event_path(event) do %>
                   <div class="venue-show-event-card">
@@ -44,6 +44,8 @@
                   </div>
                 <% end %>
               <% end %>
+            <% else %>
+              <p>No events yet...</p>
             <% end %>
           </div>
           <div class="btns-venue-show">

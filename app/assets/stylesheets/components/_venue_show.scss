@@ -2,7 +2,7 @@
 .container-venue-show {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 30px;
   background-image: url('https://raw.githubusercontent.com/danthackwray/giguide/863e7b3dc3bbc1b61f230910fc9f4d5742ce2b28/VENUE%203.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,19 +26,59 @@
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 40px;
-  margin: 30px;
+  // margin: 30px;
   border-radius: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-.venue-info img {
-  background-image: url('https://raw.githubusercontent.com/danthackwray/giguide/master/RANDOM%20BAND%20PHOTO.jpg');
-  width: 200px;
-  height: 200px;
-  margin-bottom: 10px;
-  margin: 0 auto;
-}
+// .venue-info img {
+//   background-image: url('https://raw.githubusercontent.com/danthackwray/giguide/master/RANDOM%20BAND%20PHOTO.jpg');
+//   width: 200px;
+//   height: 200px;
+//   margin-bottom: 10px;
+//   margin: 0 auto;
+// }
 
 .btns-venue-show {
   display: flex;
+  justify-content: space-around;
+  border: 1px solid yellow;
+}
+
+.venue-show-top-info {
+  display: flex;
+  border: 3px solid green;
   justify-content: space-between;
+}
+
+.venue-show-image-section {
+  border: 1px solid orange;
+  width: 40%;
+  overflow: hidden;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.venue-show-infos-section {
+  border: 3px solid palevioletred;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.venue-show-name-description {
+  border: 3px solid blue;
+  padding: 0px 20px;
+
+  p {
+    font-family: "Inter", sans-serif;
+  }
+  h2 {
+    font-family: $martel;
+    font-size: 3rem;
+  }
 }

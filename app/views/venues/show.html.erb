@@ -1,13 +1,34 @@
 <div class="container-venue-show">
   <div class="venue-info">
-    <%= render @venue %>
-    # <%= cl_image_tag @venue.photo.key %>
-    <div class="btns-venue-show">
-      <%= link_to "All venues", venues_path, class:"venue-button"  %>
-      <% if @venue.user == current_user %>
-        <%= link_to "Edit this venue", edit_venue_path(@venue), class:"venue-button" %>
-        <%= button_to "Delete this venue", @venue, method: :delete, class:"venue-button"  %>
-      <% end %>
+    <div class="venue-show-top-info">
+      <div class="venue-show-image-section">
+        <%= cl_image_tag @venue.photo.key %>
+      </div>
+      <div class="venue-show-infos-section">
+        <div class="venue-show-name-description">
+          <h2><%= @venue.name %></h2>
+          <p><%= truncate(@venue.description, length: 210, separator: /\s/) %></p>
+          <div class="venue-card-infos-bottom">
+            <div class="venue-icon-and-info">
+              <h6><i class="fa-solid fa-phone"></i></h6>
+              <h6><%= @venue.phone_number %></h6>
+            </div>
+            <div class="venue-icon-and-info">
+              <h6><i class="fa-solid fa-users"></i></h6>
+              <h6><%= @venue.capacity %></h6>
+            </div>
+            <div class="venue-icon-and-info">
+              <h6><i class="fa-solid fa-envelope"></i></h6>
+              <h6><%= @venue.email %></h6>
+            </div>
+          </div>
+          </div>
+        <div class="btns-venue-show">
+          <%= link_to "Back to venues", venues_path, class:"venue-button"  %>
+          <%= link_to "Edit venue", edit_venue_path(@venue), class:"venue-button" %>
+          <%= button_to "Delete venue", @venue, method: :delete, class:"venue-button"  %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

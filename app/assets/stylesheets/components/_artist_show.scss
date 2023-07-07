@@ -30,16 +30,25 @@
 }
 
 .artist-info-img {
-  // background-image: url(https://github.com/danthackwray/giguide/blob/master/RANDOM%20BAND%20PHOTO.jpg?raw=true);
-  border: 2px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  overflow: hidden; /* Prevent image from overflowing */
+
   img {
-    width: 200px;
-    height: 200px;
+    max-width: 100%; /* Ensure the image doesn't exceed the width of the div */
+    max-height: 100%; /* Ensure the image doesn't exceed the height of the div */
     object-fit: cover;
   }
 }
 
 .btns-artist-show {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 20px; /* Add margin to create space between buttons */
+}
+
+.btns-artist-show a:not(:last-child) {
+  margin-right: 40px; /* Add right margin to all buttons except the last one */
 }

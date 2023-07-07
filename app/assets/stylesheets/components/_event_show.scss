@@ -29,11 +29,18 @@
 }
 
 .event-info-img {
-  background-position: center;
-  width: 200px;
-  height: 200px;
-  margin-bottom: 10px;
-  margin: 0 auto;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  overflow: hidden; /* Prevent image from overflowing */
+
+  img {
+    max-width: 100%; /* Ensure the image doesn't exceed the width of the div */
+    max-height: 100%; /* Ensure the image doesn't exceed the height of the div */
+    object-fit: cover;
+  }
 }
 
 .btns-event-show {

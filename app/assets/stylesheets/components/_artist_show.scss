@@ -30,13 +30,13 @@
 }
 
 .artist-info-img {
-  background-image: url(https://github.com/danthackwray/giguide/blob/master/RANDOM%20BAND%20PHOTO.jpg?raw=true);
-  background-size: cover;
-  background-position: center;
-  width: 200px;
-  height: 200px;
-  margin-bottom: 10px;
-  margin: 0 auto;
+  // background-image: url(https://github.com/danthackwray/giguide/blob/master/RANDOM%20BAND%20PHOTO.jpg?raw=true);
+  border: 2px solid yellow;
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
 }
 
 .btns-artist-show {

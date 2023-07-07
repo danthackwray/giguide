@@ -3,11 +3,13 @@
     <%= @artist.name %>
   </div>
   <div class="artist-info">
-    <% if @artist.photo.attached? %>
-      <%= cl_image_tag @artist.photo.key %>
-    <% else %>
-      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="microphone" style="width:500px">
-    <% end %>
+    <div class="artist-info-img">
+      <% if @artist.photo.attached? %>
+        <%= cl_image_tag @artist.photo.key %>
+      <% else %>
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="microphone">
+      <% end %>
+    </div>
     <h3>Artist Info</h3>
     <div id="<%= dom_id @artist %>">
       <%# <p>

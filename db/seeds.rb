@@ -50,13 +50,13 @@ artist1 = Artist.create!(
 artist1.photo.attach(io: artist1_file, filename: "soulsister.png", content_type: "image/png")
 artist1.save
 
-artist2_file = URI.open("https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/128745919_10224156654604968_238489664101038118_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeED9vFUVpwvYU39UzXZlKNLhEVx4DMjiDeERXHgMyOIN9rs3agUgDmOsZlbDs3TvnSadkn3-XbGu_4wLATuUVk2&_nc_ohc=U1WzGc3f4koAX-H6b8c&_nc_ht=scontent-cpt1-1.xx&oh=00_AfCBuNe2dCNAxD7dw_954sejjXNbQepQtMp_Xl39FPosjw&oe=64CD2338")
+artist2_file = URI.open("https://faroutmagazine.co.uk/static/uploads/1/2023/03/The-Beatles-Reading-Far-Out-Magazine-2-1140x855.jpg")
 artist2 = Artist.create!(
   user: user2,
-  name: "Dan_T",
-  description: "Cape Town born and bred electronic artist and sound engineer Dan T brings a wealth of musical talent to local audiences",
-  website: "www.danthackwray.com",
-  genre: "Indie Folk Guitar"
+  name: "The Beatles",
+  description: "Iconic British band, bigger than Jesus.",
+  website: "www.thebeatles.com",
+  genre: "Pop"
 )
 artist2.photo.attach(io: artist2_file, filename: "dan_t.png", content_type: "image/png")
 artist2.save
@@ -265,21 +265,32 @@ event_kids_festival = Event.create!(
 event_kids_festival_file = URI.open("https://images.entertainment.ie/uploads/2022/06/23124022/kaleido.jpg?w=1280&h=768&q=high")
 event_kids_festival.photo.attach(io: event_kids_festival_file, filename: "event_img.png", content_type: "image/png")
 
-event_dan_t = Event.create!(
+event_jazz = Event.create!(
+  user: user1,
+  venue: venue_piano_bar,
+  title: "Jazz on Tuesday",
+  description: "Cape Town's best up and coming jazz artists come together for a night of classics and new compositions.
+  Not to be missed for jazz lovers!",
+  start_date: DateTime.parse("2023-07-11 20:00:00"),
+  end_date: DateTime.parse("2023-07-11 23:00:00"),
+  ticket_price: 120
+)
+event_jazz_file = URI.open("https://atpearl.com/wp-content/uploads/2021/02/Jazz-5.jpg")
+event_jazz.photo.attach(io: event_jazz_file, filename: "event_img.png", content_type: "image/png")
+
+event_beatles = Event.create!(
   user: user1,
   venue: venue_house_of_machines,
-  title: "Dan T Live in Show",
-  description: "For one night only, witness the once in a generation musical talent of Cape Town's own Dan Thackwray.
-  Playing a selection of songs from his vast catalog, Dan's unique voice and broad instrumental mastery will be on
-  show live for one night only, so don't miss out!",
+  title: "The Beatles are back!",
+  description: "For one night only, witness the iconic Beatles live in concert!",
   start_date: DateTime.parse("2023-07-08 21:00:00"),
   end_date: DateTime.parse("2023-07-08 23:00:00"),
-  ticket_price: 200,
+  ticket_price: 800,
 )
-event_dan_t_file = URI.open("https://scontent-cpt1-1.xx.fbcdn.net/v/t1.6435-9/128745919_10224156654604968_238489664101038118_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeED9vFUVpwvYU39UzXZlKNLhEVx4DMjiDeERXHgMyOIN9rs3agUgDmOsZlbDs3TvnSadkn3-XbGu_4wLATuUVk2&_nc_ohc=U1WzGc3f4koAX-H6b8c&_nc_ht=scontent-cpt1-1.xx&oh=00_AfCBuNe2dCNAxD7dw_954sejjXNbQepQtMp_Xl39FPosjw&oe=64CD2338")
-event_dan_t.photo.attach(io: event_dan_t_file, filename: "event_img.png", content_type: "image/png")
-event_dan_t.artists = [artist2]
-event_dan_t.save
+event_beatles_file = URI.open("https://media.socastsrm.com/wpRssService/imageRedirect?url=http%3A%2F%2Fimages.pulsewebcontent.com%2Fphotos%2F2021%2F06_Jun%2F800%2FBeatles66Germany800Getty_6_21.jpg")
+event_beatles.photo.attach(io: event_beatles_file, filename: "event_img.png", content_type: "image/png")
+event_beatles.artists = [artist2]
+event_beatles.save
 
 event_turn_into_a_cyclist_at_full_moon = Event.create!(
   user: user1,

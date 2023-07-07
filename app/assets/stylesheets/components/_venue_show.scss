@@ -32,31 +32,25 @@
   flex-direction: column;
 }
 
-// .venue-info img {
-//   background-image: url('https://raw.githubusercontent.com/danthackwray/giguide/master/RANDOM%20BAND%20PHOTO.jpg');
-//   width: 200px;
-//   height: 200px;
-//   margin-bottom: 10px;
-//   margin: 0 auto;
-// }
-
 .btns-venue-show {
   display: flex;
-  justify-content: space-around;
-  border: 1px solid yellow;
+  justify-content: space-between;
+  // border: 1px solid yellow;
+  margin-top: 20px;
+  align-self: flex-end;
 }
 
 .venue-show-top-info {
   display: flex;
-  border: 3px solid green;
+  // border: 3px solid green;
   justify-content: space-between;
 }
 
 .venue-show-image-section {
-  border: 1px solid orange;
+  // border: 1px solid orange;
   width: 40%;
   overflow: hidden;
-  height: 500px;
+  height: 550px;
   img {
     height: 100%;
     object-fit: cover;
@@ -64,7 +58,7 @@
 }
 
 .venue-show-infos-section {
-  border: 3px solid palevioletred;
+  // border: 3px solid palevioletred;
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -72,8 +66,8 @@
 }
 
 .venue-show-name-description {
-  border: 3px solid blue;
-  padding: 0px 20px;
+  // border: 3px solid blue;
+  padding: 0px 30px;
 
   p {
     font-family: "Inter", sans-serif;
@@ -82,4 +76,91 @@
     font-family: $martel;
     font-size: 3rem;
   }
+  h4 {
+    font-family: $martel;
+    margin-top: 20px;
+  }
+}
+
+.venue-show-infos-bottom {
+  // border: 1px solid yellow;
+  display: flex;
+  justify-content: space-between;
+  // width: 9%;
+  margin-top: 20px;
+  h6 {
+    color: #dc69ff;
+    margin-right: 10px;
+  }
+}
+
+.venue-show-description {
+  height: 100px;
+  overflow-y: scroll;
+  // border: 1px solid red;
+}
+
+.venue-show-description::-webkit-scrollbar {
+  display: none;
+}
+
+.venue-show-events-section {
+  // border: 2px solid yellow;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 25px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.venue-show-event-card {
+  border: 1px solid rgb(203, 108, 255);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgb(57, 13, 72);
+  color: white;
+  height: 200px;
+  width: 200px;
+  margin-right: 20px;
+
+  h3 {
+    font-family:'Martel', serif;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  h5 {
+    font-family:'Inter', sans-serif;
+    text-decoration: none;
+    font-size: 0.8rem;
+    color:rgb(203, 108, 255)
+  }
+  h4 {
+    font-family:'Inter', sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
+    color:rgb(203, 108, 255)
+  }
+
+  img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .venue-show-event-card-date-price {
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid green;
+  }
+
+  .venue-show-event-card-infos {
+    padding: 20px;
+    // border: 1px solid white;
+  }
+}
+
+.venue-show-event-card:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }

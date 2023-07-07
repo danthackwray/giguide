@@ -26,6 +26,13 @@
   color: white;
   padding: 40px;
   margin: 30px;
+  h3 {
+    font-family: $martel;
+  }
+  h5 {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+  }
 }
 
 .event-info-img {
@@ -46,4 +53,52 @@
 .btns-event-show {
   display: flex;
   justify-content: space-between;
+}
+
+.event-show-artist-card {
+  border: 1px solid rgb(203, 108, 255);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgb(57, 13, 72);
+  color: white;
+  text-align: center;
+  width: 250px;
+
+  a {
+    text-decoration: none;
+  }
+
+  h3 {
+    font-family:'Martel', serif;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  h5 {
+    font-family:'Inter', sans-serif;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+  h4 {
+    font-family:'Inter', sans-serif;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .artist-card-date-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .artist-card-infos {
+    padding: 20px;
+    // border: 1px solid white;
+  }
 }

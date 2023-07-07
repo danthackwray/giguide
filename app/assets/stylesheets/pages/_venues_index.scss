@@ -52,11 +52,17 @@
   }
   h3 {
     color: white;
+    font-family: $martel;
+    color:rgb(203, 108, 255)
   }
   h6 {
     color: #dc69ff;
     margin-right: 10px;
   }
+}
+
+.venue-card:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .venue-card-image {

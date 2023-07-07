@@ -4,6 +4,11 @@ class ArtistsController < ApplicationController
   # GET /artists or /artists.json
   def index
     @artists = Artist.all
+    if params[:query].present?
+      @artists = Artist.search_by_name_and_description(params[:query])
+    else
+      @artists = Artist.all
+    end
   end
 
   # GET /artists/1 or /artists/1.json

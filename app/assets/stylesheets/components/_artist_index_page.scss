@@ -1,7 +1,7 @@
 .artist-cards-container {
   display: grid;
   justify-content: space-between;
-  margin-top: 20px;
+  // margin-top: 20px;
   border: 1px solid rgb(13, 0, 255);
   background-color: black;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -31,9 +31,15 @@
   margin-bottom: 10px;
 }
 
-.searchbar {
+.artists-searchbar {
   text-align: center;
-  margin-top: 20px;
+  // margin-top: 20px;
+  height: 70px;
+  background-color: #181E3F;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .artist-card {
@@ -60,7 +66,7 @@
   color: white;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 10px;
+  // margin-top: 10px;
   // text-align: center;
 
 

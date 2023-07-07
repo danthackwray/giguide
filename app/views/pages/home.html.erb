@@ -1,10 +1,8 @@
-
 <div class="banner">
   <div class="banner-text">
     <h2>G I G U I D E</h2>
   </div>
 </div>
-
 <div class="searchbar">
   <%= form_with url: root_path, method: :get, class: "d-flex w-50" do %>
     <%= text_field_tag :query,
@@ -14,7 +12,6 @@
     <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
   <% end %>
 </div>
-
 <div class="events_banner">
   <h2>UPCOMING EVENTS</h2>
 </div>
@@ -23,7 +20,11 @@
     <% @events.each do |event|%>
       <%= link_to event_path(event) do %>
         <div class="event-card">
-          <%= cl_image_tag event.photo.key %>
+          <% if event.photo.attached? %>
+            <%= cl_image_tag event.photo.key %>
+          <% else %>
+            <img src="https://images.unsplash.com/photo-1486556396467-d83d2b23514b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="smokey scene">
+          <% end %>
           <div class="event-card-infos">
             <h3><%= event.title %></h3>
             <h5><%= event.venue.name %></h5>

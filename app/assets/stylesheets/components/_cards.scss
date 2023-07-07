@@ -1,73 +1,3 @@
-// .card-trip {
-//   text-decoration: none;
-//   overflow: hidden;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-// }
-
-// .card-trip > img {
-//   text-decoration: none;
-//   height: 200px;
-//   width: 100%;
-//   object-fit: cover;
-// }
-
-// .card-trip h2 {
-//   text-decoration: none;
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
-
-// .card-trip p {
-//   text-decoration: none;
-//   font-size: 12px;
-//   opacity: .7;
-//   margin: 0;
-// }
-
-// .card-trip .card-trip-infos {
-//   border-radius: 30px;
-//   text-decoration: none;
-//   padding: 16px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   position: relative;
-// }
-
-// .card-trip-infos .card-trip-user {
-//   text-decoration: none;
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }
-
-// .cards {
-//   text-decoration: none;
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-gap: 16px;
-// }
-
-// .event-name h2 {
-//   text-decoration: none;
-// }
-
-// .event-name {
-//   text-decoration: none;
-// }
-
-// .card-trip {
-//   border-radius: 6%;
-//   text-decoration: none;
-// }
-
-// .card-trip-infos {
-//   text-decoration: none;
-// }
-
 .event-card {
   h3 {
     font-family:'Martel', serif;
@@ -78,11 +8,13 @@
     font-family:'Inter', sans-serif;
     text-decoration: none;
     font-size: 0.8rem;
+    color:rgb(203, 108, 255)
   }
   h4 {
     font-family:'Inter', sans-serif;
     text-decoration: none;
     font-size: 1rem;
+    color:rgb(203, 108, 255)
   }
 
   border: 1px solid rgb(203, 108, 255);
@@ -92,12 +24,7 @@
   color: white;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  // margin-top: 10px;
   height: 350px;
-  // text-align: center;
-  // display: flex;
-  // flex-direction: column;
-
 
   img {
     height: 200px;
@@ -117,7 +44,9 @@
   }
 }
 
-
+.event-card:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
 
 .event-cards-container {
   background-color: black;
@@ -126,6 +55,7 @@
   grid-gap: 20px;
   padding: 20px;
   height: 100%;
+  margin-top: 20px;
 
   a {
     text-decoration: none;

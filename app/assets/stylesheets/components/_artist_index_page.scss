@@ -1,27 +1,17 @@
 .artist-cards-container {
   display: grid;
   justify-content: space-between;
-  // margin-top: 20px;
-  border: 1px solid rgb(13, 0, 255);
+  margin-top: 20px;
+  // border: 1px solid rgb(13, 0, 255);
   background-color: black;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 15px;
+  grid-gap: 20px;
   padding: 20px;
   font-family: 'Martel', serif;
   min-height: 280px;
-}
-
-.artist-card {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  border: 1px solid red;
-  text-align: center;
-}
-
-.artist-card a {
-  color: #fff;
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
 
 .artist-card:hover {
@@ -44,10 +34,17 @@
 }
 
 .artist-card {
+    border: 1px solid rgb(203, 108, 255);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgb(57, 13, 72);
+    color: white;
+    text-align: center;
   h3 {
     font-family:'Martel', serif;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 0;
   }
   h5 {
     font-family:'Inter', sans-serif;
@@ -59,18 +56,6 @@
     text-decoration: none;
     font-size: 1rem;
   }
-
-  border: 1px solid rgb(203, 108, 255);
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: rgb(57, 13, 72);
-  color: white;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  // margin-top: 10px;
-  // text-align: center;
-
-
 
   img {
     height: 200px;
@@ -87,5 +72,33 @@
   .artist-card-infos {
     padding: 20px;
     // border: 1px solid white;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .artist-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .artist-cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .artist-cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .artist-cards-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

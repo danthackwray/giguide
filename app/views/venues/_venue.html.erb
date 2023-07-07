@@ -28,5 +28,29 @@
     <strong>Description:</strong>
     <%= venue.description %>
   </p>
-
+<h3>Events:</h3>
+      <% if venue.events.first.nil? %>
+        <p>This venue hasn't hosted any events. Yet...</p>
+      <% else %>
+        <div class="event-cards-container">
+          <% venue.events.each do |event|%>
+            <%= link_to event_path(event) do %>
+              <div class="event-card">
+                <% if event.photo.attached? %>
+                  <%= cl_image_tag event.photo.key %>
+                <% else %>
+                  <img src="https://images.unsplash.com/photo-1486556396467-d83d2b23514b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="smokey scene">
+                <% end %>
+                <div class="event-card-infos">
+                  <h3><%= event.title %></h3>
+                  <h5><%= event.venue.name %></h5>
+                  <div class="event-card-date-price">
+                    <h5><%= event.start_date.strftime("%I:%M %p, %A, %b %d")%></h5>
+                    <h4>R <%= event.ticket_price %></h4>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
 </div>

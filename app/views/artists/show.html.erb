@@ -12,10 +12,6 @@
     </div>
     <h3>Artist Info</h3>
     <div id="<%= dom_id @artist %>">
-      <%# <p>
-        <strong>User:</strong>
-        <%= @artist.user_id %>
-      <%# </p> %>
       <p>
         <strong>Genre:</strong>
         <%= @artist.genre %>
@@ -28,9 +24,9 @@
         <strong>Website:</strong>
         <%= @artist.website %>
       </p>
-      <h3>Events:</h3>
+      <h3>Upcoming Events:</h3>
       <% if @artist.events.first.nil? %>
-        <p>This artist hasn't played at any events. Yet...</p>
+        <p>No events yet...</p>
       <% else %>
         <div class="event-cards-container">
           <% @artist.events.each do |event|%>

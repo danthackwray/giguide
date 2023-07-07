@@ -6,22 +6,25 @@
   <h5> <%= event.description %></h5>
 </div>
 <h3>Venue:</h3>
-<div class="event-cards-container">
+<div class="venue-cards-container">
   <%= link_to venue_path(event.venue) do %>
-    <div class="event-card">
-      <%= cl_image_tag event.venue.photo.key %>
-      <div class="event-card-infos">
+    <div class="venue-card">
+      <div class="venue-card-image">
+        <%= cl_image_tag event.venue.photo.key %>
+      </div>
+      <div class="venue-card-infos">
         <h3> <%= event.venue.name %> </h3>
-        <div class="event-card-date-price">
-          <div>
+        <p><%= truncate(event.venue.description, length: 210, separator: /\s/) %></p>
+        <div class="venue-card-infos-bottom">
+          <div class="venue-icon-and-info">
             <h6><i class="fa-solid fa-phone"></i></h6>
             <h6><%= event.venue.phone_number %></h6>
           </div>
-          <div>
+          <div class="venue-icon-and-info">
             <h6><i class="fa-solid fa-users"></i></h6>
             <h6><%= event.venue.capacity %></h6>
           </div>
-          <div>
+          <div class="venue-icon-and-info">
             <h6><i class="fa-solid fa-envelope"></i></h6>
             <h6><%= event.venue.email %></h6>
           </div>
@@ -38,15 +41,14 @@
 <% else %>
   <% @event.artists.each do |artist| %>
     <%= link_to artist_path(artist) do %>
-      <div class="event-card">
+      <div class="event-show-artist-card">
         <% if artist.photo.attached? %>
           <%= cl_image_tag artist.photo.key %>
         <% else %>
           <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="microphone">
         <% end %>
-        <div class="event-card-infos">
+        <div class="artist-card-infos">
           <h3><%= artist.name %></h3>
-          <h6>Genres: <%= artist.genre %></h6>
         </div>
       </div>
     <% end %>
